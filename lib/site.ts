@@ -113,6 +113,15 @@ export type Announcement = {
 
 export const announcements: Announcement[] = [
   {
+    slug: 'vendoreye-gcc-vendor-lifecycle-marketplace-launch',
+    date: '2026-08-19',
+    category: 'Product',
+    title: 'VendorEye launches a GCC-first vendor onboarding and lifecycle management portal',
+    summary: 'VendorEye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
+    href: 'https://vendoreye.ae',
+    cta: 'Explore VendorEye',
+  },
+  {
     slug: 'dr-riya-rawal-ai-research-leadership',
     date: '2026-08-19',
     category: 'Leadership',
