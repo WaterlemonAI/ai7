@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Clock3 } from 'lucide-react'
-import { blogPosts, blogProducts, getBlogPost, getRelatedPosts } from '@/lib/blogs'
+import { blogPosts, blogProducts, getBlogHero, getBlogPost, getRelatedPosts } from '@/lib/blogs'
 import { siteUrl } from '@/lib/site'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -33,9 +33,10 @@ export default async function InsightArticle({ params }: Props) {
   const post = getBlogPost(slug)
   if (!post) notFound()
   const product = blogProducts[post.product]
+  const hero = getBlogHero(post.slug)
   const related = getRelatedPosts(post)
   const published = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.publishedAt))
-  const imageUrl = `${siteUrl}/insights/${post.slug}/opengraph-image`
+  const imageUrl = `${siteUrl}${hero.src}`
   const articleSchema = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title, description: post.description,
     image: [imageUrl], datePublished: post.publishedAt, dateModified: post.publishedAt,
@@ -64,7 +65,10 @@ export default async function InsightArticle({ params }: Props) {
 
       <main>
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 md:py-16">
-          <div className="relative aspect-[1200/630] overflow-hidden rounded-2xl border border-border bg-secondary shadow-2xl shadow-primary/5"><Image src={`/insights/${post.slug}/opengraph-image`} alt={`Illustration for ${post.title}`} fill priority className="object-cover" sizes="(max-width: 1200px) 100vw, 1152px" /></div>
+          <figure>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-secondary shadow-2xl shadow-primary/5"><Image src={hero.src} alt={hero.alt} fill priority className="object-cover" sizes="(max-width: 1200px) 100vw, 1152px" /></div>
+            <figcaption className="sr-only">{hero.alt}</figcaption>
+          </figure>
         </div>
 
         <article className="mx-auto max-w-3xl px-5 pb-20 sm:px-6 md:pb-28">

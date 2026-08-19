@@ -44,6 +44,31 @@ export const blogProducts: Record<BlogProduct, { name: string; href: string; log
   },
 }
 
+export const blogHeroImages: Record<string, { src: string; alt: string }> = {
+  'banking-document-intelligence-apis-taed': { src: '/insights/heroes/banking-document-intelligence-apis-taed.jpg', alt: 'Banking analyst reviewing financial documents transformed into validated structured data by visual intelligence' },
+  'insurance-claims-visual-intelligence-taed': { src: '/insights/heroes/insurance-claims-visual-intelligence-taed.jpg', alt: 'Insurance claims specialist connecting damage images and claim documents into structured evidence' },
+  'government-document-media-intelligence-taed': { src: '/insights/heroes/government-document-media-intelligence-taed.jpg', alt: 'Government analyst organizing public records and media into traceable structured intelligence' },
+  'healthcare-document-workflows-taed': { src: '/insights/heroes/healthcare-document-workflows-taed.jpg', alt: 'Healthcare professional reviewing clinical documents and medical imagery through a governed intelligence workflow' },
+  'real-estate-due-diligence-document-intelligence-taed': { src: '/insights/heroes/real-estate-due-diligence-document-intelligence-taed.jpg', alt: 'Real estate team connecting plans, property images, and contracts for visual due diligence' },
+  'logistics-document-media-automation-taed': { src: '/insights/heroes/logistics-document-media-automation-taed.jpg', alt: 'Logistics operator transforming shipping documents and freight media into structured operational intelligence' },
+  'banking-third-party-risk-vendoreye': { src: '/insights/heroes/banking-third-party-risk-vendoreye.jpg', alt: 'Bank risk team monitoring an interconnected network of financial technology vendors and evidence' },
+  'insurance-supplier-broker-governance-vendoreye': { src: '/insights/heroes/insurance-supplier-broker-governance-vendoreye.jpg', alt: 'Insurance governance team monitoring brokers, repair networks, and supplier risk signals' },
+  'government-procurement-supplier-intelligence-vendoreye': { src: '/insights/heroes/government-procurement-supplier-intelligence-vendoreye.jpg', alt: 'Public procurement analyst reviewing supplier relationships, contracts, and accountable risk evidence' },
+  'healthcare-supplier-credentialing-vendoreye': { src: '/insights/heroes/healthcare-supplier-credentialing-vendoreye.jpg', alt: 'Healthcare procurement team monitoring supplier credentials, quality evidence, and renewal signals' },
+  'real-estate-contractor-vendor-risk-vendoreye': { src: '/insights/heroes/real-estate-contractor-vendor-risk-vendoreye.jpg', alt: 'Property team mapping contractor, subcontractor, and facilities supplier dependencies' },
+  'logistics-carrier-supplier-monitoring-vendoreye': { src: '/insights/heroes/logistics-carrier-supplier-monitoring-vendoreye.jpg', alt: 'Logistics risk team monitoring carriers, ports, warehouses, and supplier disruptions' },
+  'banking-multilingual-voice-agents-rolefield': { src: '/insights/heroes/banking-multilingual-voice-agents-rolefield.jpg', alt: 'Multilingual banking voice conversation progressing through a secure governed service workflow' },
+  'insurance-first-notice-loss-voice-ai-rolefield': { src: '/insights/heroes/insurance-first-notice-loss-voice-ai-rolefield.jpg', alt: 'Driver reporting an insurance incident by voice as the claims workflow captures and routes next steps' },
+  'government-multilingual-citizen-services-rolefield': { src: '/insights/heroes/government-multilingual-citizen-services-rolefield.jpg', alt: 'Resident accessing a multilingual public service by voice with accountable workflow completion' },
+  'healthcare-patient-voice-automation-rolefield': { src: '/insights/heroes/healthcare-patient-voice-automation-rolefield.jpg', alt: 'Patient using multilingual voice assistance to schedule care with clinical escalation available' },
+  'real-estate-lead-qualification-voice-ai-rolefield': { src: '/insights/heroes/real-estate-lead-qualification-voice-ai-rolefield.jpg', alt: 'International property buyer using multilingual voice assistance to arrange a viewing' },
+  'logistics-voice-agents-dispatch-customer-operations-rolefield': { src: '/insights/heroes/logistics-voice-agents-dispatch-customer-operations-rolefield.jpg', alt: 'Driver and dispatch team resolving a delivery exception through multilingual voice automation' },
+}
+
+export function getBlogHero(slug: string) {
+  return blogHeroImages[slug] ?? { src: `/insights/${slug}/opengraph-image`, alt: 'AI7Lab enterprise AI insight' }
+}
+
 const publishedAt = '2026-08-18'
 
 export const blogPosts: BlogPost[] = [

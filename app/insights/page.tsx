@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Clock3 } from 'lucide-react'
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/reveal'
-import { blogIndustries, blogPosts, blogProducts } from '@/lib/blogs'
+import { blogIndustries, blogPosts, blogProducts, getBlogHero } from '@/lib/blogs'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = pageMetadata({
@@ -51,11 +51,12 @@ export default function InsightsPage() {
                 <div className="mt-8 grid gap-6 lg:grid-cols-3">
                   {posts.map((post, index) => {
                     const product = blogProducts[post.product]
+                    const hero = getBlogHero(post.slug)
                     return (
                       <Reveal key={post.slug} delay={index * 80}>
                         <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/50 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5">
                           <Link href={`/insights/${post.slug}`} className="relative block aspect-[1200/630] overflow-hidden border-b border-border bg-secondary">
-                            <Image src={`/insights/${post.slug}/opengraph-image`} alt={`${post.title} visual guide`} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 33vw" />
+                            <Image src={hero.src} alt={hero.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 33vw" />
                           </Link>
                           <div className="flex flex-1 flex-col p-6">
                             <div className="flex items-center justify-between gap-3">
