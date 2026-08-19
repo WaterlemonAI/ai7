@@ -40,7 +40,7 @@ export default function AnnouncementsPage() {
                     <div>
                       <p className="text-pretty leading-relaxed text-muted-foreground">{item.summary}</p>
                       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium group-hover:text-primary">
-                        Explore announcement {external ? <ArrowUpRight className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
+                        {item.cta ?? 'Explore announcement'} {external ? <ArrowUpRight className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
                       </span>
                     </div>
                   </div>

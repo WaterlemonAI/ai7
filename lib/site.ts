@@ -108,9 +108,19 @@ export type Announcement = {
   title: string
   summary: string
   href: string
+  cta?: string
 }
 
 export const announcements: Announcement[] = [
+  {
+    slug: 'dr-riya-rawal-ai-research-leadership',
+    date: '2026-08-19',
+    category: 'Leadership',
+    title: 'Dr. Riya Rawal joins AI7Lab to advance AI research and future products',
+    summary: 'Dr. Rawal will strengthen the research foundations behind AI7Lab’s future products, connecting scientific rigour, responsible AI, and practical product development.',
+    href: '/announcements/dr-riya-rawal-ai7lab-profile.pdf',
+    cta: 'Read the leadership profile',
+  },
   {
     slug: 'rolefield-launch',
     date: '2026-08-18',
@@ -146,12 +156,6 @@ export type TeamMember = {
 }
 
 export const team: TeamMember[] = [
-  {
-    name: 'Raj Malik',
-    role: 'Founder & Chairman',
-    focus: 'Strategy · Capital · Scale',
-    bio: 'Brings more than three decades of experience across enterprise growth, telecom, satellite, and strategic investments.',
-  },
   {
     name: 'Arbaz Uddin',
     role: 'Product & Go-to-Market',
