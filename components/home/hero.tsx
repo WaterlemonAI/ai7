@@ -37,13 +37,13 @@ export function Hero() {
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-24 pt-32"
+        className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pb-20 pt-24 sm:min-h-screen sm:px-6 sm:pb-24 sm:pt-32"
       >
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1 text-xs text-muted-foreground backdrop-blur-md"
+          className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1.5 text-[11px] leading-tight text-muted-foreground backdrop-blur-md sm:text-xs"
         >
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -52,7 +52,7 @@ export function Hero() {
           Research-led AI Product Company · Dubai
         </motion.div>
 
-        <h1 className="mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+        <h1 className="mt-6 max-w-5xl text-balance text-[2.45rem] font-semibold leading-[1.02] tracking-[-0.035em] min-[390px]:text-[2.75rem] sm:text-6xl sm:tracking-tight md:text-7xl lg:text-[5.5rem]">
           {HEADLINE.map((word, i) => (
             <span key={i} className="inline-block overflow-hidden pr-[0.25em] align-top">
               <motion.span
@@ -111,14 +111,14 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="mt-16 grid max-w-3xl grid-cols-3 gap-8 border-t border-border/60 pt-8"
+          className="mt-12 grid max-w-3xl grid-cols-3 gap-3 border-t border-border/60 pt-6 sm:mt-16 sm:gap-8 sm:pt-8"
         >
           {stats.map((s) => (
             <div key={s.label}>
-              <dt className="text-2xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <dt className="text-xl font-semibold tracking-tight text-foreground min-[390px]:text-2xl sm:text-4xl">
                 <CountUp value={s.value} suffix={s.suffix} />
               </dt>
-              <dd className="mt-1 text-sm text-muted-foreground">{s.label}</dd>
+              <dd className="mt-1 text-[11px] leading-snug text-muted-foreground min-[390px]:text-xs sm:text-sm">{s.label}</dd>
             </div>
           ))}
         </motion.dl>
@@ -129,7 +129,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 1 }}
-        className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="pointer-events-none absolute bottom-5 left-1/2 hidden -translate-x-1/2 sm:block"
       >
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-border p-1.5">
           <motion.span

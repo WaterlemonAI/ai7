@@ -20,7 +20,7 @@ export function Announcements() {
         </Reveal>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-3">
-          {announcements.map((item, index) => {
+          {announcements.slice(0, 3).map((item, index) => {
             const external = item.href.startsWith('http')
             const content = (
               <>

@@ -31,8 +31,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-card/40">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 py-12 sm:py-16">
-        <div className="grid gap-8 sm:gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr] grid-cols-2">
-          <div>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center">
               <Logo className="h-[50px] w-auto" />
             </Link>
@@ -67,11 +67,11 @@ export function Footer() {
               AI7LAB Tech Innovation Limited, DIFC, Dubai, UAE
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
             <a href={linkedInUrl} target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">
               LinkedIn
             </a>
-            <a href="mailto:contact@ai7lab.net" className="transition-colors hover:text-foreground">
+            <a href="mailto:contact@ai7lab.net" className="break-all transition-colors hover:text-foreground">
               contact@ai7lab.net
             </a>
           </div>

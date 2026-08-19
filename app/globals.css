@@ -94,14 +94,30 @@
   }
   html {
     scrollbar-width: none;
+    overflow-x: clip;
   }
   html::-webkit-scrollbar {
     display: none;
   }
   body {
     @apply bg-background text-foreground;
+    min-width: 0;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  a {
+    overflow-wrap: anywhere;
   }
   ::selection {
     background: rgba(37, 99, 235, 0.25);
