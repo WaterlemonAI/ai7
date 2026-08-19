@@ -113,6 +113,15 @@ export type Announcement = {
 
 export const announcements: Announcement[] = [
   {
+    slug: 'taed-crosses-1000-daily-api-calls',
+    date: '2026-08-19',
+    category: 'Product',
+    title: 'Taed crosses 1,000 API calls per day',
+    summary: 'Taed has passed the milestone of processing more than 1,000 API calls each day as teams use its visual intelligence infrastructure to turn documents and media into structured, production-ready data.',
+    href: 'https://taed.dev',
+    cta: 'Explore Taed APIs',
+  },
+  {
     slug: 'vendoreye-gcc-vendor-lifecycle-marketplace-launch',
     date: '2026-08-19',
     category: 'Product',
