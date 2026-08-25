@@ -1,5 +1,6 @@
 import { blogPosts, blogProducts } from '@/lib/blogs'
 import { jobs, products, siteUrl } from '@/lib/site'
+import { articleDescription, editorialArticles, getPillar, primaryKeyword } from '@/lib/editorial'
 
 const line = (label: string, path: string, description: string) =>
   `- [${label}](${path.startsWith('http') ? path : `${siteUrl}${path}`}): ${description}`
@@ -18,7 +19,7 @@ ${line('Vision', '/vision', 'AI7Lab mission, research-to-product model, and team
 ${line('Products', '/products', 'Canonical overview of Taed, VendorEye, and RoleField.ai.')}
 ${line('Technology', '/technology', 'Visual intelligence, speech-to-speech research, agentic automation, and production infrastructure.')}
 ${line('Platform', '/platform', 'Shared enterprise AI architecture, capabilities, governance, and industry coverage.')}
-${line('Insights', '/insights', 'Eighteen practical industry guides across all three products.')}
+${line('Insights', '/insights', '155 UAE and GCC enterprise AI research notes plus eighteen applied product field guides.')}
 ${line('Announcements', '/announcements', 'Product releases, research updates, leadership news, and company announcements.')}
 ${line('Careers', '/careers', 'Current UAE job openings and application details.')}
 ${line('Contact', '/contact', 'Official contact details for enterprise, partner, and investor enquiries.')}
@@ -70,6 +71,14 @@ export function buildLlmsFullTxt() {
 `
   }).join('\n')
 
+  const researchSections = editorialArticles.map((post) => `### ${post.title}
+
+- URL: ${siteUrl}/insights/research/${post.slug}
+- Pillar: ${getPillar(post).title}
+- Primary topic: ${primaryKeyword(post)}
+- Summary: ${articleDescription(post)}
+`).join('\n')
+
   const careerSections = jobs.map((job) => `### ${job.title}
 
 - URL: ${siteUrl}/careers/${job.slug}
@@ -109,6 +118,11 @@ ${productSections}
 The following articles explain product approaches, implementation patterns, governance considerations, and expected operational improvements. They are educational product content and should not be interpreted as customer case studies unless a page explicitly states otherwise.
 
 ${articleSections}
+## UAE and GCC enterprise AI research programme
+
+The following 155 research notes cover strategy, architecture, voice economics, proprietary AI IP, document intelligence, procurement, build-versus-buy decisions, security, evaluation, cost, operations, and responsible adoption for enterprise leaders and technical teams.
+
+${researchSections}
 ## Current careers
 
 ${careerSections}

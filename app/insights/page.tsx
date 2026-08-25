@@ -5,13 +5,14 @@ import { ArrowRight, Clock3 } from 'lucide-react'
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/reveal'
 import { blogIndustries, blogPosts, blogProducts, getBlogHero } from '@/lib/blogs'
+import { editorialArticles, editorialPillars, getPillarImage } from '@/lib/editorial'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Enterprise AI Insights',
-  description: 'Practical guides to visual intelligence, supplier intelligence, and multilingual AI automation across banking, insurance, government, healthcare, real estate, and logistics.',
+  description: '155 research-backed enterprise AI guides for UAE and GCC leaders, spanning strategy, data, voice AI, proprietary IP, document intelligence, procurement, evaluation, security, and governance.',
   path: '/insights',
-  keywords: ['enterprise AI insights', 'document intelligence', 'supplier risk intelligence', 'multilingual voice agents'],
+  keywords: ['enterprise AI UAE', 'AI solutions UAE', 'artificial intelligence GCC', 'Dubai AI company', 'AI governance UAE', 'Arabic AI'],
 })
 
 const industryId = (industry: string) => industry.toLowerCase().replace(/\s+/g, '-')
@@ -21,10 +22,16 @@ export default function InsightsPage() {
     <>
       <PageHeader
         eyebrow="Insights"
-        title="Applied intelligence for real operating problems."
-        description="Field guides from the teams behind Taed, VendorEye, and RoleField.ai—organized around the workflows that matter in six complex industries."
+        title="The production AI field guide for the UAE and GCC."
+        description="155 strategic, technical, and research-backed guides for leaders turning AI ambition into governed enterprise systems—plus applied field notes from the teams behind Taed, VendorEye, and RoleField.ai."
       />
 
+      <section className="border-b border-border bg-card/40"><div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-6"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">AI7Lab research · 2026 editorial programme</p><h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">Fourteen pillars. One hundred fifty-five production-minded perspectives.</h2></div><div className="rounded-2xl border border-primary/15 bg-background px-5 py-4 text-right"><strong className="block text-3xl text-primary">{editorialArticles.length}</strong><span className="text-sm text-muted-foreground">UAE & GCC research notes</span></div></div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">{editorialPillars.map((pillar) => { const posts = editorialArticles.filter((item) => item.pillar === pillar.number); return <article key={pillar.number} id={`pillar-${pillar.number}`} className="overflow-hidden rounded-3xl border border-border bg-background"><div className="relative aspect-[3/1] overflow-hidden"><Image src={getPillarImage(pillar.number)} alt="AI7Lab enterprise AI editorial illustration" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" /></div><div className="p-6 sm:p-7"><p className="font-mono text-xs uppercase tracking-[0.18em] text-primary">Pillar {String(pillar.number).padStart(2,'0')} · {posts.length} articles</p><h3 className="mt-3 text-2xl font-semibold">{pillar.title}</h3><ol className="mt-6 space-y-3">{posts.map((post) => <li key={post.slug}><Link href={`/insights/research/${post.slug}`} className="group flex items-start gap-3 text-sm leading-6 text-muted-foreground hover:text-primary"><span className="mt-0.5 font-mono text-xs text-primary">{String(post.number).padStart(3,'0')}</span><span>{post.title}</span><ArrowRight className="ml-auto mt-1 h-4 w-4 shrink-0 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" /></Link></li>)}</ol></div></article> })}</div>
+      </div></section>
+
+      <div className="mx-auto max-w-7xl px-5 pt-20 sm:px-6"><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Applied product field notes</p><h2 className="mt-3 text-3xl font-semibold">Explore by industry</h2></div>
       <nav aria-label="Browse insights by industry" className="border-b border-border bg-background/90">
         <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-5 sm:px-6">
           {blogIndustries.map((industry) => (
