@@ -1,3 +1,5 @@
+import { taedUrl, vendorEyeUrl } from './external-resources'
+
 export const siteUrl = 'https://www.ai7lab.net'
 export const linkedInUrl = 'https://www.linkedin.com/company/ai7lab/'
 
@@ -243,4 +245,3 @@ export const jobs: Job[] = [
 export function getJob(slug: string) {
   return jobs.find((job) => job.slug === slug)
 }
-import { taedUrl, vendorEyeUrl } from './external-resources'
