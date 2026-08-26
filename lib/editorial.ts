@@ -1,4 +1,5 @@
 import { editorialArticles, editorialPillars } from '@/lib/editorial-roadmap.generated'
+import { taedUrl, vendorEyeUrl } from '@/lib/external-resources'
 
 export { editorialArticles, editorialPillars }
 
@@ -18,8 +19,8 @@ export const editorialSources = [
   { title: 'AI Risk Management Framework', publisher: 'NIST', url: 'https://www.nist.gov/itl/ai-risk-management-framework' },
   { title: 'Generative AI Profile — NIST AI 600-1', publisher: 'NIST', url: 'https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence' },
   { title: 'Top 10 for LLM and GenAI', publisher: 'OWASP GenAI Security Project', url: 'https://genai.owasp.org/initiatives/top-10-for-llm-and-genai/' },
-  { title: 'TAED document intelligence APIs', publisher: 'TAED', url: 'https://taed.dev' },
-  { title: 'VendorEye supplier intelligence platform', publisher: 'VendorEye', url: 'https://vendoreye.ae' },
+  { title: 'TAED document intelligence APIs', publisher: 'TAED', url: taedUrl },
+  { title: 'VendorEye supplier intelligence platform', publisher: 'VendorEye', url: vendorEyeUrl },
 ] as const
 
 export type EditorialArticle = (typeof editorialArticles)[number]

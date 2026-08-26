@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, ExternalLink, ShieldCheck } from 'lucide-react'
 import { articleDescription, articleImageAlt, editorialArticles, focusAnalysis, focusPoints, getEditorialArticle, getPillar, getPillarImage, getRelatedEditorial, primaryKeyword, shareTakeaway, sourcesForArticle, topicKeywords } from '@/lib/editorial'
 import { siteUrl } from '@/lib/site'
+import { getVendorEyeGuideForTopic, taedUrl, vendorEyeUrl } from '@/lib/external-resources'
 
 type Props = { params: Promise<{ slug: string }> }
 export function generateStaticParams() { return editorialArticles.map(({ slug }) => ({ slug })) }
@@ -37,8 +38,9 @@ export default async function ResearchArticlePage({ params }: Props) {
   const vendorEyeArticle = article.pillar === 14 || (article.pillar === 12 && (article.number === 118 || article.number === 119))
   const productArticle = article.pillar >= 12 && article.pillar <= 14
   const productName = taedArticle ? 'TAED' : vendorEyeArticle ? 'VendorEye' : 'TAED and VendorEye'
-  const productHref = taedArticle ? 'https://taed.dev' : vendorEyeArticle ? 'https://vendoreye.ae' : '/products'
-  const productAction = taedArticle ? 'Test one representative document with TAED' : vendorEyeArticle ? 'Map one complete supplier journey with VendorEye' : 'Explore AI7Lab’s product and IP approach'
+  const vendorEyeGuide = vendorEyeArticle ? getVendorEyeGuideForTopic(article.title) : null
+  const productHref = taedArticle ? taedUrl : vendorEyeGuide?.href ?? (vendorEyeArticle ? vendorEyeUrl : '/products')
+  const productAction = taedArticle ? 'Test one representative document with TAED' : vendorEyeArticle ? `Read the VendorEye guide: ${vendorEyeGuide?.title ?? 'Vendor compliance in the UAE'}` : 'Explore AI7Lab’s product and IP approach'
   const url = `${siteUrl}/insights/research/${article.slug}`
   const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title, description, image: [`${siteUrl}${getPillarImage(article.pillar)}`], datePublished: '2026-08-26', dateModified: '2026-08-26', author: { '@type': 'Organization', name: 'AI7Lab' }, publisher: { '@type': 'Organization', name: 'AI7Lab', logo: { '@type': 'ImageObject', url: `${siteUrl}/ai7lab-logo.png` } }, mainEntityOfPage: url, about: [primaryKeyword(article), 'Enterprise AI in the UAE', pillar.title], inLanguage: 'en-AE' }
   const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Insights', item: `${siteUrl}/insights` }, { '@type': 'ListItem', position: 3, name: pillar.title, item: `${siteUrl}/insights#pillar-${article.pillar}` }, { '@type': 'ListItem', position: 4, name: article.title, item: url }] }

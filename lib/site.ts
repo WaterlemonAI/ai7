@@ -30,7 +30,7 @@ export const products: Product[] = [
     description:
       'Turn documents, images, video, and audio into structured, versioned, monitored APIs. Taed packages AI7Lab’s visual intelligence research into schema-controlled infrastructure teams can take to production.',
     status: 'Live',
-    external: 'https://taed.dev',
+    external: taedUrl,
     logo: '/logo-taed.png',
     points: ['Any-media understanding', 'Schema-controlled outputs', 'Versioned and monitored APIs', 'Reusable enterprise workflows'],
   },
@@ -41,7 +41,7 @@ export const products: Product[] = [
     description:
       'See beyond the vendor. VendorEye discovers, verifies, assesses, qualifies, and continuously monitors suppliers while building an evidence-backed vendor record for every decision.',
     status: 'Live',
-    external: 'https://vendoreye.ae',
+    external: vendorEyeUrl,
     logo: '/logo-vendoreye.png',
     points: ['Autonomous vendor master', 'Evidence-based assessments', 'Bid intelligence', 'Continuous supplier monitoring'],
   },
@@ -118,7 +118,7 @@ export const announcements: Announcement[] = [
     category: 'Product',
     title: 'Taed crosses 1,000 API calls per day',
     summary: 'Taed has passed the milestone of processing more than 1,000 API calls each day as teams use its visual intelligence infrastructure to turn documents and media into structured, production-ready data.',
-    href: 'https://taed.dev',
+    href: taedUrl,
     cta: 'Explore Taed APIs',
   },
   {
@@ -127,7 +127,7 @@ export const announcements: Announcement[] = [
     category: 'Product',
     title: 'VendorEye launches a GCC-first vendor onboarding and lifecycle management portal',
     summary: 'VendorEye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
-    href: 'https://vendoreye.ae',
+    href: vendorEyeUrl,
     cta: 'Explore VendorEye',
   },
   {
@@ -243,3 +243,4 @@ export const jobs: Job[] = [
 export function getJob(slug: string) {
   return jobs.find((job) => job.slug === slug)
 }
+import { taedUrl, vendorEyeUrl } from './external-resources'

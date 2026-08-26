@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Clock3 } from 'lucide-react'
 import { blogPosts, blogProducts, getBlogHero, getBlogPost, getRelatedPosts } from '@/lib/blogs'
 import { siteUrl } from '@/lib/site'
+import { vendorEyeResourcesByInsight } from '@/lib/external-resources'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -35,6 +36,7 @@ export default async function InsightArticle({ params }: Props) {
   const product = blogProducts[post.product]
   const hero = getBlogHero(post.slug)
   const related = getRelatedPosts(post)
+  const externalResources = vendorEyeResourcesByInsight[post.slug] ?? []
   const published = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.publishedAt))
   const imageUrl = `${siteUrl}${hero.src}`
   const articleSchema = {
@@ -78,6 +80,7 @@ export default async function InsightArticle({ params }: Props) {
           <section className="mt-16"><h2 className="text-3xl font-semibold tracking-tight">A practical four-stage workflow</h2><ol className="mt-8 border-l border-primary/25">{post.workflow.map((step, index) => <li key={step.title} className="relative pb-8 pl-8 last:pb-0"><span className="absolute -left-4 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-primary/30 bg-background font-mono text-xs text-primary">0{index + 1}</span><h3 className="text-lg font-semibold">{step.title}</h3><p className="mt-2 leading-7 text-muted-foreground">{step.description}</p></li>)}</ol></section>
           <section className="mt-16 rounded-2xl border border-border bg-card/60 p-7 sm:p-9"><h2 className="text-2xl font-semibold tracking-tight">Governance should be part of the design</h2><p className="mt-5 leading-7 text-muted-foreground">{post.governance}</p><h3 className="mt-8 text-lg font-semibold">A sensible place to start</h3><p className="mt-3 leading-7 text-muted-foreground">{post.implementation}</p></section>
           <section className="mt-16"><h2 className="text-3xl font-semibold tracking-tight">What a strong implementation should improve</h2><ul className="mt-7 grid gap-4 sm:grid-cols-2">{post.outcomes.map((outcome) => <li key={outcome} className="flex gap-3 rounded-xl border border-border p-4 text-sm leading-6"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />{outcome}</li>)}</ul></section>
+          {externalResources.length > 0 && <section className="mt-16"><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Related VendorEye research</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">Go deeper with direct procurement guides</h2><p className="mt-4 leading-7 text-muted-foreground">Continue with the most relevant VendorEye articles for this workflow:</p><ul className="mt-7 divide-y divide-border border-y border-border">{externalResources.map((resource) => <li key={resource.href} className="py-5"><a href={resource.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-5"><span><span className="block font-semibold leading-snug group-hover:text-primary">{resource.title}</span><span className="mt-2 block text-sm leading-6 text-muted-foreground">{resource.description}</span></span><ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a></li>)}</ul></section>}
           <section className="mt-16"><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Frequently asked questions</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">Questions teams ask before they begin</h2><div className="mt-7 divide-y divide-border border-y border-border">{post.faqs.map((faq) => <details key={faq.question} className="group py-5"><summary className="cursor-pointer list-none pr-8 text-lg font-medium">{faq.question}</summary><p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{faq.answer}</p></details>)}</div></section>
         </article>
 

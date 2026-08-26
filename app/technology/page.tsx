@@ -4,6 +4,7 @@ import { ArrowRight, AudioWaveform, Braces, Eye, Workflow } from 'lucide-react'
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/reveal'
 import { pageMetadata } from '@/lib/seo'
+import { taedUrl } from '@/lib/external-resources'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Technology',
@@ -19,7 +20,7 @@ const systems = [
     title: 'One model layer for documents and media.',
     body: 'Our end-to-end visual intelligence LLM works across documents, images, video, and audio. It extracts structure, understands context, and adds a reusable intelligence layer to messy enterprise inputs.',
     product: 'Taed turns this research into schema-controlled, versioned, monitored APIs.',
-    href: 'https://taed.dev',
+    href: taedUrl,
   },
   {
     icon: AudioWaveform,

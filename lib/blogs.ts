@@ -20,17 +20,19 @@ export type BlogPost = {
   faqs: { question: string; answer: string }[]
 }
 
+import { taedUrl, vendorEyeUrl } from './external-resources'
+
 export const blogProducts: Record<BlogProduct, { name: string; href: string; logo: string; color: string; short: string }> = {
   taed: {
     name: 'Taed',
-    href: 'https://taed.dev',
+    href: taedUrl,
     logo: '/logo-taed.png',
     color: '#2563eb',
     short: 'Visual intelligence APIs',
   },
   vendoreye: {
     name: 'VendorEye',
-    href: 'https://vendoreye.ae',
+    href: vendorEyeUrl,
     logo: '/logo-vendoreye.png',
     color: '#0f766e',
     short: 'Supplier intelligence',

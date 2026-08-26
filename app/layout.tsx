@@ -1,12 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { SmoothScroll } from '@/components/smooth-scroll'
 import { linkedInUrl, siteUrl } from '@/lib/site'
 import { defaultDescription } from '@/lib/seo'
 import './globals.css'
+
+const googleAnalyticsId = 'G-9PWLKTW3XB'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -109,6 +112,16 @@ export default function RootLayout({
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="AI7Lab full LLM context" />
       </head>
       <body className="font-sans antialiased">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`}
+        </Script>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, '\\u003c') }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website).replace(/</g, '\\u003c') }} />
         <SmoothScroll>
