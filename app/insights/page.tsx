@@ -7,6 +7,7 @@ import { Reveal } from '@/components/reveal'
 import { blogIndustries, blogPosts, blogProducts, getBlogHero } from '@/lib/blogs'
 import { editorialArticles, editorialPillars, getPillarImage } from '@/lib/editorial'
 import { pageMetadata } from '@/lib/seo'
+import { aiLibraryArticles, aiLibraryClusters } from '@/lib/ai-library'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Enterprise AI Insights',
@@ -25,6 +26,11 @@ export default function InsightsPage() {
         title="The production AI field guide for the UAE and GCC."
         description="155 strategic, technical, and research-backed guides for leaders turning AI ambition into governed enterprise systems—plus applied field notes from the teams behind Taed, VendorEye, and RoleField.ai."
       />
+
+      <section id="ai-in-x-library" className="scroll-mt-24 border-b border-border bg-background"><div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-6"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">New · AI in X implementation library</p><h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">Fifty connected guides for sector leaders moving AI into production.</h2><p className="mt-5 max-w-3xl leading-7 text-muted-foreground">Explore applied use cases, readiness audits, operating fundamentals, governance decisions, and implementation checklists designed around UAE and GCC realities.</p></div><div className="rounded-2xl border border-primary/15 bg-blue-50 px-5 py-4 text-right"><strong className="block text-3xl text-primary">50</strong><span className="text-sm text-muted-foreground">interconnected guides</span></div></div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">{aiLibraryClusters.map(cluster=>{const items=aiLibraryArticles.filter(item=>item.cluster===cluster);return <article key={cluster} className="rounded-3xl border border-border bg-card/40 p-6 sm:p-7"><p className="font-mono text-xs uppercase tracking-[0.18em] text-primary">{items.length} guides</p><h3 className="mt-3 text-2xl font-semibold">{cluster}</h3><ol className="mt-6 space-y-3">{items.map(item=><li key={item.slug}><Link href={`/insights/ai-in-x/${item.slug}`} className="group flex items-start gap-3 text-sm leading-6 text-muted-foreground hover:text-primary"><span className="mt-0.5 font-mono text-xs text-primary">{String(item.number).padStart(2,'0')}</span><span>{item.title}</span><ArrowRight className="ml-auto mt-1 h-4 w-4 shrink-0 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"/></Link></li>)}</ol></article>})}</div>
+      </div></section>
 
       <section className="border-b border-border bg-card/40"><div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-24">
         <div className="flex flex-wrap items-end justify-between gap-6"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">AI7Lab research · 2026 editorial programme</p><h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">Fourteen pillars. One hundred fifty-five production-minded perspectives.</h2></div><div className="rounded-2xl border border-primary/15 bg-background px-5 py-4 text-right"><strong className="block text-3xl text-primary">{editorialArticles.length}</strong><span className="text-sm text-muted-foreground">UAE & GCC research notes</span></div></div>
