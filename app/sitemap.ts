@@ -5,7 +5,7 @@ import { editorialArticles, getPillarImage } from '@/lib/editorial'
 import { aiLibraryArticles } from '@/lib/ai-library'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/vision', '/products', '/platform', '/technology', '/insights', '/announcements', '/careers', '/contact']
+  const routes = ['', '/vision', '/products', '/partners', '/partners/builders', '/partners/enterprises', '/partners/technology-providers', '/platform', '/technology', '/insights', '/announcements', '/careers', '/contact']
   const siteUpdatedAt = new Date('2026-08-26')
   return [
     ...routes.map((route) => ({ url: `${siteUrl}${route}`, lastModified: siteUpdatedAt, changeFrequency: route === '/announcements' || route === '/insights' ? 'weekly' as const : 'monthly' as const, priority: route === '' ? 1 : 0.8, ...(route === '' ? { images: [`${siteUrl}/opengraph-image`] } : {}) })),

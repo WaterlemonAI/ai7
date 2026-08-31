@@ -18,7 +18,8 @@ const details = [
   { icon: Building2, label: "For", value: "Enterprises, partners & investors" },
 ]
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ interest?: string }> }) {
+  const { interest } = await searchParams
   return (
     <>
       <PageHeader
@@ -50,7 +51,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={120}>
-            <ContactForm />
+            <ContactForm initialInterest={interest} />
           </Reveal>
         </div>
       </section>

@@ -3,9 +3,9 @@
 import { useState } from "react"
 import { ArrowRight, Check } from "lucide-react"
 
-const interests = ["Enterprise solutions", "Partnership", "Investment", "Product access", "Careers", "Other"]
+const interests = ["Enterprise solutions", "Builder or startup partnership", "Enterprise AI pipeline", "Technology provider partnership", "Partnership", "Investment", "Product access", "Careers", "Other"]
 
-export function ContactForm() {
+export function ContactForm({ initialInterest }: { initialInterest?: string }) {
   const [submitted, setSubmitted] = useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -40,6 +40,7 @@ export function ContactForm() {
           <select
             id="interest"
             name="interest"
+            defaultValue={interests.includes(initialInterest ?? '') ? initialInterest : 'Enterprise solutions'}
             className="min-h-[44px] sm:h-11 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
           >
             {interests.map((i) => (

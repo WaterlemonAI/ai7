@@ -6,6 +6,7 @@ export const linkedInUrl = 'https://www.linkedin.com/company/ai7lab/'
 export const nav = [
   { label: 'Vision', href: '/vision' },
   { label: 'Products', href: '/products' },
+  { label: 'Partner', href: '/partners' },
   { label: 'Technology', href: '/technology' },
   { label: 'Insights', href: '/insights' },
   { label: 'Announcements', href: '/announcements' },
