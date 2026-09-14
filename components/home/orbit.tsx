@@ -1,5 +1,6 @@
 'use client'
 
+import { formatBrand } from '@/lib/brand-text'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
@@ -65,11 +66,11 @@ export function Orbit() {
                         className="object-contain p-2"
                       />
                     ) : (
-                      <span className="text-xs font-semibold text-foreground">{product.name.slice(0, 2)}</span>
+                      <span className="text-xs font-semibold text-foreground">{formatBrand(product.name.slice(0, 2))}</span>
                     )}
                   </div>
                   <span className="sr-only">
-                    {product.name}
+                    {formatBrand(product.name, { logo: false })}
                   </span>
                 </div>
               </motion.div>

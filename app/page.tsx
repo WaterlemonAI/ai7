@@ -1,32 +1,18 @@
-import { Hero } from '@/components/home/hero'
-import { Thesis } from '@/components/home/thesis'
-import { Ecosystem } from '@/components/home/ecosystem'
-import { Capabilities } from '@/components/home/capabilities'
-import { WhyUAE } from '@/components/home/why-uae'
-import { Industries } from '@/components/home/industries'
-import { CTA } from '@/components/home/cta'
-import { Announcements } from '@/components/home/announcements'
-import { defaultDescription, pageMetadata } from '@/lib/seo'
+import type { Metadata } from 'next'
+import { SovereignHome } from '@/components/home/sovereign/home'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = pageMetadata({
-  title: 'AI7Lab — Enterprise AI Research & Products from Dubai',
-  description: defaultDescription,
-  path: '/',
-  keywords: ['enterprise AI Dubai', 'visual intelligence API', 'supplier intelligence', 'multilingual voice AI', 'AI research lab UAE'],
-})
+const title = 'AI7Lab | Sovereign AI Infrastructure, Engineering & Enterprise AI'
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title,
+    description: 'AI7Lab designs, builds and operates Sovereign AI environments for enterprises and governments, spanning strategy, GPUs, models, applications, security, governance and production operations.',
+    path: '/',
+    keywords: ['Sovereign AI', 'enterprise AI infrastructure', 'private AI deployment', 'GPU infrastructure', 'Forward Deployed Engineers', 'AI governance'],
+  }),
+  title: { absolute: title },
+}
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <Thesis />
-      <Ecosystem />
-      <Capabilities />
-      <WhyUAE />
-      <Industries />
-      <Announcements />
-      <CTA />
-    </>
-  )
+  return <SovereignHome />
 }
-import type { Metadata } from 'next'

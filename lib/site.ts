@@ -27,29 +27,29 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    name: 'Taed',
+    name: 'taed.dev',
     slug: 'taed',
     tagline: 'Production-Grade Visual Intelligence APIs',
     description:
-      'Turn documents, images, video, and audio into structured, versioned, monitored APIs. Taed packages AI7Lab’s visual intelligence research into schema-controlled infrastructure teams can take to production.',
+      'Turn documents, images, video, and audio into structured, versioned, monitored APIs. taed.dev packages AI7Lab’s visual intelligence research into schema-controlled infrastructure teams can take to production.',
     status: 'Live',
     external: taedUrl,
     logo: '/logo-taed.png',
     points: ['Any-media understanding', 'Schema-controlled outputs', 'Versioned and monitored APIs', 'Reusable enterprise workflows'],
   },
   {
-    name: 'VendorEye',
+    name: 'vendoreye',
     slug: 'vendoreye',
     tagline: 'Supplier Intelligence from First Contact to Governance',
     description:
-      'See beyond the vendor. VendorEye discovers, verifies, assesses, qualifies, and continuously monitors suppliers while building an evidence-backed vendor record for every decision.',
+      'See beyond the vendor. vendoreye discovers, verifies, assesses, qualifies, and continuously monitors suppliers while building an evidence-backed vendor record for every decision.',
     status: 'Live',
     external: vendorEyeUrl,
     logo: '/logo-vendoreye.png',
     points: ['Autonomous vendor master', 'Evidence-based assessments', 'Bid intelligence', 'Continuous supplier monitoring'],
   },
   {
-    name: 'RoleField.ai',
+    name: 'rolefield.ai',
     slug: 'rolefield',
     tagline: 'A Multilingual AI Workforce for the GCC',
     description:
@@ -119,19 +119,19 @@ export const announcements: Announcement[] = [
     slug: 'taed-crosses-1000-daily-api-calls',
     date: '2026-08-19',
     category: 'Product',
-    title: 'Taed crosses 1,000 API calls per day',
-    summary: 'Taed has passed the milestone of processing more than 1,000 API calls each day as teams use its visual intelligence infrastructure to turn documents and media into structured, production-ready data.',
+    title: 'taed.dev crosses 1,000 API calls per day',
+    summary: 'taed.dev has passed the milestone of processing more than 1,000 API calls each day as teams use its visual intelligence infrastructure to turn documents and media into structured, production-ready data.',
     href: taedUrl,
-    cta: 'Explore Taed APIs',
+    cta: 'Explore taed.dev APIs',
   },
   {
     slug: 'vendoreye-gcc-vendor-lifecycle-marketplace-launch',
     date: '2026-08-19',
     category: 'Product',
-    title: 'VendorEye launches a GCC-first vendor onboarding and lifecycle management portal',
-    summary: 'VendorEye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
+    title: 'vendoreye launches a GCC-first vendor onboarding and lifecycle management portal',
+    summary: 'vendoreye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
     href: vendorEyeUrl,
-    cta: 'Explore VendorEye',
+    cta: 'Explore vendoreye',
   },
   {
     slug: 'dr-riya-rawal-ai-research-leadership',
@@ -146,7 +146,7 @@ export const announcements: Announcement[] = [
     slug: 'rolefield-launch',
     date: '2026-08-18',
     category: 'Product',
-    title: 'RoleField.ai launches a voice-led AI workforce for the GCC',
+    title: 'rolefield.ai launches a voice-led AI workforce for the GCC',
     summary: 'AI7Lab’s in-house speech-to-speech research now powers multilingual agents that converse, act, and complete customer workflows.',
     href: 'https://www.rolefield.ai',
   },
@@ -155,7 +155,7 @@ export const announcements: Announcement[] = [
     date: '2026-08-18',
     category: 'Research',
     title: 'One intelligence layer, multiple enterprise products',
-    summary: 'Our visual intelligence, voice, and agentic automation research is becoming reusable infrastructure beneath Taed, VendorEye, and RoleField.',
+    summary: 'Our visual intelligence, voice, and agentic automation research is becoming reusable infrastructure beneath taed.dev, vendoreye, and rolefield.ai.',
     href: '/technology',
   },
   {
@@ -163,7 +163,7 @@ export const announcements: Announcement[] = [
     date: '2026-08-18',
     category: 'Leadership',
     title: 'AI7Lab is hiring two commercial leaders in the UAE',
-    summary: 'We are opening searches for a Head of Sales for VendorEye and a Head of Partnerships for Taed.',
+    summary: 'We are opening searches for a Head of Sales for vendoreye and a Head of Partnerships for taed.dev.',
     href: '/careers',
   },
 ]
@@ -174,11 +174,13 @@ export type TeamMember = {
   focus: string
   bio: string
   linkedin?: string
+  photo?: string
 }
 
 export const team: TeamMember[] = [
   {
     name: 'Arbaz Uddin',
+    photo: '/team/arbaz-uddin.jpg',
     role: 'Product & Go-to-Market',
     focus: 'Product · GTM · Enterprise',
     bio: 'Leads enterprise product strategy, sales, partnerships, and GCC market execution.',
@@ -186,6 +188,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Dr. Riya Rawal',
+    photo: '/team/dr-riya-rawal.jpg',
     role: 'AI Research',
     focus: 'Research · Models · Intelligence',
     bio: 'Advances AI7Lab’s model research and turns new intelligence capabilities into product foundations.',
@@ -221,23 +224,23 @@ export type Job = {
 export const jobs: Job[] = [
   {
     slug: 'head-of-sales-vendoreye',
-    title: 'Head of Sales — VendorEye',
-    product: 'VendorEye',
+    title: 'Head of Sales — vendoreye',
+    product: 'vendoreye',
     location: 'United Arab Emirates',
     salaryMin: 15000,
     salaryMax: 20000,
-    summary: 'Own VendorEye’s enterprise sales motion across the UAE and turn procurement and supplier-risk conversations into durable customer relationships.',
+    summary: 'Own vendoreye’s enterprise sales motion across the UAE and turn procurement and supplier-risk conversations into durable customer relationships.',
     responsibilities: ['Build and own the UAE enterprise pipeline', 'Lead discovery, demos, proposals, and commercial negotiation', 'Develop sector-specific sales plays with product and leadership', 'Carry customer signal back into the product roadmap'],
     requirements: ['Enterprise SaaS or procurement-technology sales experience', 'Strong UAE network and consultative selling capability', 'Comfort selling into complex, regulated organizations', 'Builder mindset suited to an early-stage product company'],
   },
   {
     slug: 'head-of-partnerships-taed',
-    title: 'Head of Partnerships — Taed',
-    product: 'Taed',
+    title: 'Head of Partnerships — taed.dev',
+    product: 'taed.dev',
     location: 'United Arab Emirates',
     salaryMin: 15000,
     salaryMax: 20000,
-    summary: 'Build the partner ecosystem that takes Taed’s visual intelligence API infrastructure into enterprise workflows across the UAE.',
+    summary: 'Build the partner ecosystem that takes taed.dev’s visual intelligence API infrastructure into enterprise workflows across the UAE.',
     responsibilities: ['Develop technology, channel, and strategic partnerships', 'Create joint solutions and go-to-market motions', 'Identify high-value visual-intelligence use cases', 'Coordinate partner feedback across research, product, and engineering'],
     requirements: ['Partnerships or business-development experience in enterprise technology', 'Understanding of AI, APIs, or systems integration', 'Strong UAE ecosystem relationships', 'Ability to translate technical capability into commercial value'],
   },

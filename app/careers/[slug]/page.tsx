@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -94,12 +95,12 @@ export default async function JobPage({ params }: JobPageProps) {
             <Link href="/careers" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
               <ArrowLeft className="h-4 w-4" /> All careers
             </Link>
-            <p className="mt-10 font-mono text-sm uppercase tracking-[0.2em] text-primary">{job.product} · UAE</p>
-            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight md:text-6xl">{job.title}</h1>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">{job.summary}</p>
+            <p className="mt-10 font-mono text-sm uppercase tracking-[0.2em] text-primary">{formatBrand(job.product)} · UAE</p>
+            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight md:text-6xl">{formatBrand(job.title)}</h1>
+            <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">{formatBrand(job.summary)}</p>
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm">
-              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {job.location}</span>
-              <span className="inline-flex items-center gap-2"><Banknote className="h-4 w-4 text-primary" /> AED {job.salaryMin.toLocaleString()}–{job.salaryMax.toLocaleString()} per month</span>
+              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {formatBrand(job.location)}</span>
+              <span className="inline-flex items-center gap-2"><Banknote className="h-4 w-4 text-primary" /> AED {formatBrand(job.salaryMin.toLocaleString())}–{formatBrand(job.salaryMax.toLocaleString())} per month</span>
             </div>
           </div>
         </header>
@@ -109,13 +110,13 @@ export default async function JobPage({ params }: JobPageProps) {
             <section>
               <h2 className="text-2xl font-semibold tracking-tight">What you will own</h2>
               <ul className="mt-6 space-y-4">
-                {job.responsibilities.map((item) => <li key={item} className="flex items-start gap-3 leading-relaxed text-muted-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" /> {item}</li>)}
+                {job.responsibilities.map((item) => <li key={item} className="flex items-start gap-3 leading-relaxed text-muted-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" /> {formatBrand(item)}</li>)}
               </ul>
             </section>
             <section>
               <h2 className="text-2xl font-semibold tracking-tight">What will help you thrive</h2>
               <ul className="mt-6 space-y-4">
-                {job.requirements.map((item) => <li key={item} className="flex items-start gap-3 leading-relaxed text-muted-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" /> {item}</li>)}
+                {job.requirements.map((item) => <li key={item} className="flex items-start gap-3 leading-relaxed text-muted-foreground"><Check className="mt-1 h-4 w-4 shrink-0 text-primary" /> {formatBrand(item)}</li>)}
               </ul>
             </section>
             <section>

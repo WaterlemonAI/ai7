@@ -2,13 +2,16 @@
 
 import { useEffect } from 'react'
 import Lenis from 'lenis'
+import { usePathname } from 'next/navigation'
 
 /**
  * Lenis smooth-scroll provider.
  * Respects prefers-reduced-motion by skipping smoothing entirely.
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
   useEffect(() => {
+    if (pathname === '/') return
     const prefersReduced =
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -32,7 +35,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       cancelAnimationFrame(rafId)
       lenis.destroy()
     }
-  }, [])
+  }, [pathname])
 
   return <>{children}</>
 }

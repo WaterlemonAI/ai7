@@ -46,15 +46,15 @@ export const editorialPillars = [
   },
   {
     "number": 12,
-    "title": "TAED, VendorEye, and building valuable AI IP"
+    "title": "taed.dev, vendoreye, and building valuable AI IP"
   },
   {
     "number": 13,
-    "title": "TAED document intelligence and extraction infrastructure"
+    "title": "taed.dev document intelligence and extraction infrastructure"
   },
   {
     "number": 14,
-    "title": "VendorEye procurement, supplier evidence, and governance"
+    "title": "vendoreye procurement, supplier evidence, and governance"
   }
 ] as const
 
@@ -942,31 +942,31 @@ export const editorialArticles = [
   {
     "number": 111,
     "pillar": 12,
-    "title": "What Is TAED? Turning Business Documents into Structured, Usable Data",
-    "brief": "Explain TAED as a document-intelligence and extraction capability that converts uploaded documents into structured business fields. Distinguish it from basic OCR: OCR reads characters, while document intelligence identifies document type, extracts relevant fields, preserves confidence and provenance, and produces information that downstream workflows can use.\n\nExplain the problem addressed:\n\n- Enterprise documents arrive as PDFs, scans, and photographs.\n- Staff repeatedly read and re-enter the same information.\n- Different document types require different extraction rules.\n- Manual entry introduces delays and errors.\n- Generic OCR output is not sufficient for business decisions.",
+    "title": "What Is taed.dev? Turning Business Documents into Structured, Usable Data",
+    "brief": "Explain taed.dev as a document-intelligence and extraction capability that converts uploaded documents into structured business fields. Distinguish it from basic OCR: OCR reads characters, while document intelligence identifies document type, extracts relevant fields, preserves confidence and provenance, and produces information that downstream workflows can use.\n\nExplain the problem addressed:\n\n- Enterprise documents arrive as PDFs, scans, and photographs.\n- Staff repeatedly read and re-enter the same information.\n- Different document types require different extraction rules.\n- Manual entry introduces delays and errors.\n- Generic OCR output is not sufficient for business decisions.",
     "imagePrompt": "Trade licence or business document passing through extraction and emerging as verified structured fields; avoid readable generated document text.",
     "slug": "what-is-taed-turning-business-documents-into-structured-usable-data"
   },
   {
     "number": 112,
     "pillar": 12,
-    "title": "What Problems Is TAED Designed to Solve?",
-    "brief": "TAED use cases reflected in the latest sprint—trade licences and other configured business-document types; document classification; field extraction; expected-document validation; confidence handling; reusable extraction contracts; and feeding verified information into onboarding, procurement, compliance, and vendor-management systems.\n\nClarify that TAED should not make the final procurement or compliance decision. It transforms difficult documents into reviewable evidence.",
+    "title": "What Problems Is taed.dev Designed to Solve?",
+    "brief": "taed.dev use cases reflected in the latest sprint—trade licences and other configured business-document types; document classification; field extraction; expected-document validation; confidence handling; reusable extraction contracts; and feeding verified information into onboarding, procurement, compliance, and vendor-management systems.\n\nClarify that taed.dev should not make the final procurement or compliance decision. It transforms difficult documents into reviewable evidence.",
     "imagePrompt": "Several business-document types entering separate extraction contracts and producing normalized enterprise records.",
     "slug": "what-problems-is-taed-designed-to-solve"
   },
   {
     "number": 113,
     "pillar": 12,
-    "title": "From Upload to Verified Record: How TAED Fits into a Production Workflow",
-    "brief": "The sprint’s intended sequence:\n\n1. A vendor uploads a document.\n2. The file is securely stored.\n3. Malware scanning completes.\n4. A queue schedules extraction.\n5. TAED processes the correct document type.\n6. The complete response and operational metadata are retained.\n7. Only approved business fields are shown to users.\n8. The vendor confirms or corrects extracted values.\n9. An authorized reviewer accepts, rejects, or requests correction.\n10. The verified information updates the governed vendor record.\n\nDiscuss retries, failed states, dead-letter handling, idempotency, and audit history.",
+    "title": "From Upload to Verified Record: How taed.dev Fits into a Production Workflow",
+    "brief": "The sprint’s intended sequence:\n\n1. A vendor uploads a document.\n2. The file is securely stored.\n3. Malware scanning completes.\n4. A queue schedules extraction.\n5. taed.dev processes the correct document type.\n6. The complete response and operational metadata are retained.\n7. Only approved business fields are shown to users.\n8. The vendor confirms or corrects extracted values.\n9. An authorized reviewer accepts, rejects, or requests correction.\n10. The verified information updates the governed vendor record.\n\nDiscuss retries, failed states, dead-letter handling, idempotency, and audit history.",
     "imagePrompt": "End-to-end document journey from secure upload through scanning, queued extraction, confirmation, and review.",
     "slug": "from-upload-to-verified-record-how-taed-fits-into-a-production-workflow"
   },
   {
     "number": 114,
     "pillar": 12,
-    "title": "TAED Is Not Just OCR: Why Document Contracts Matter",
+    "title": "taed.dev Is Not Just OCR: Why Document Contracts Matter",
     "brief": "Explain document-specific extraction contracts, expected schemas, required and optional fields, file-type restrictions, size limits, provider API identifiers, response validation, and schema versions. Show why sending every file to one generic OCR prompt creates inconsistent results.\n\nDiscuss the sprint principle that an unsupported document should go to manual review rather than be sent to an unrelated extraction configuration.",
     "imagePrompt": "Generic OCR output contrasted with a structured, schema-governed document extraction contract.",
     "slug": "taed-is-not-just-ocr-why-document-contracts-matter"
@@ -974,7 +974,7 @@ export const editorialArticles = [
   {
     "number": 115,
     "pillar": 12,
-    "title": "Where TAED Ends and Human Verification Begins",
+    "title": "Where taed.dev Ends and Human Verification Begins",
     "brief": "Confidence is not approval; extracted values may be incomplete or incorrect; vendors should be able to confirm or correct appropriate fields; reviewers need the source document beside extracted data; consequential decisions require evidence and authority.\n\nCover:\n\n- Low-confidence values\n- Conflicting fields\n- Incorrect document types\n- Expired documents\n- Unreadable uploads\n- Corrections and their provenance\n- Separation between provider output and verified truth",
     "imagePrompt": "Split-screen reviewer experience showing a source document beside highlighted extracted fields and a confirmation workflow.",
     "slug": "where-taed-ends-and-human-verification-begins"
@@ -982,15 +982,15 @@ export const editorialArticles = [
   {
     "number": 116,
     "pillar": 12,
-    "title": "Building a Secure Document-Intelligence Pipeline with TAED",
-    "brief": "Secure object storage, encryption keys, signed access, malware quarantine, tenant isolation, queued processing, minimal provider transmission, secret management, response validation, audit logging, retention, deletion, and data-residency assessment.\n\nUse the latest sprint’s intended architecture: storage and scanning must succeed before the document is queued for TAED. Quarantined files must never reach the extraction provider.",
-    "imagePrompt": "Secure pipeline with storage, malware scanning, queue, TAED extraction, governed database, and authorized review.",
+    "title": "Building a Secure Document-Intelligence Pipeline with taed.dev",
+    "brief": "Secure object storage, encryption keys, signed access, malware quarantine, tenant isolation, queued processing, minimal provider transmission, secret management, response validation, audit logging, retention, deletion, and data-residency assessment.\n\nUse the latest sprint’s intended architecture: storage and scanning must succeed before the document is queued for taed.dev. Quarantined files must never reach the extraction provider.",
+    "imagePrompt": "Secure pipeline with storage, malware scanning, queue, taed.dev extraction, governed database, and authorized review.",
     "slug": "building-a-secure-document-intelligence-pipeline-with-taed"
   },
   {
     "number": 117,
     "pillar": 12,
-    "title": "Testing TAED in Production: What a Successful API Call Does Not Prove",
+    "title": "Testing taed.dev in Production: What a Successful API Call Does Not Prove",
     "brief": "Go beyond the happy path by testing wrong document types, malformed responses, timeouts, rate limits, duplicate jobs, oversized files, unsafe content, cross-tenant identifiers, schema changes, corrections, accessibility, and recovery after worker failure.\n\nEmphasize the sprint lesson: passing code tests does not prove the complete browser-to-database workflow. Production readiness requires durable evidence across UI, API, queue, provider, database, and subsequent sessions.",
     "imagePrompt": "Document-intelligence system being tested against valid, invalid, delayed, duplicated, and hostile inputs.",
     "slug": "testing-taed-in-production-what-a-successful-api-call-does-not-prove"
@@ -998,8 +998,8 @@ export const editorialArticles = [
   {
     "number": 118,
     "pillar": 12,
-    "title": "Why VendorEye Is a Better Approach to Procurement in the UAE",
-    "brief": "UAE procurement commonly involves supplier information scattered across emails, spreadsheets, shared drives, ERP records, portals, and individual employees. VendorEye’s proposed advantage is an evidence-first, GCC-aware operating model that connects:\n\n- Supplier discovery and intake\n- Document collection\n- TAED-assisted extraction\n- Vendor confirmation and correction\n- Internal review and approval\n- Qualification and sourcing\n- Bid and commercial workflows\n- Contract and invoice evidence\n- Renewal and expiry monitoring\n- A governed vendor record with audit history\n\nCompare VendorEye fairly against spreadsheets, generic workflow tools, global procurement suites, and point solutions. Explain where another option could still be a better fit.",
+    "title": "Why vendoreye Is a Better Approach to Procurement in the UAE",
+    "brief": "UAE procurement commonly involves supplier information scattered across emails, spreadsheets, shared drives, ERP records, portals, and individual employees. vendoreye’s proposed advantage is an evidence-first, GCC-aware operating model that connects:\n\n- Supplier discovery and intake\n- Document collection\n- taed.dev-assisted extraction\n- Vendor confirmation and correction\n- Internal review and approval\n- Qualification and sourcing\n- Bid and commercial workflows\n- Contract and invoice evidence\n- Renewal and expiry monitoring\n- A governed vendor record with audit history\n\nCompare vendoreye fairly against spreadsheets, generic workflow tools, global procurement suites, and point solutions. Explain where another option could still be a better fit.",
     "imagePrompt": "Fragmented procurement tools converging into one governed supplier record and workflow.",
     "slug": "why-vendoreye-is-a-better-approach-to-procurement-in-the-uae"
   },
@@ -1056,14 +1056,14 @@ export const editorialArticles = [
     "pillar": 12,
     "title": "Valuing AI IP: Beyond Patents and Model Weights",
     "brief": "Data rights, replacement cost, accuracy advantage, workflow embedment, switching cost, recurring revenue, customer evidence, evaluation coverage, deployment maturity, and defensibility.",
-    "imagePrompt": "AI asset valuation framework combining data, software, workflow, customers, and operational knowledge.\n\nThe strongest narrative connecting TAED and VendorEye is:\n\n> TAED converts difficult documents into structured evidence. VendorEye turns that evidence into a governed procurement process.\n\nThat distinction prevents both products from sounding like generic “AI-powered” tools. TAED solves the document-understanding layer; VendorEye creates broader value by embedding document intelligence inside supplier onboarding, verification, procurement, review, and continuous governance.",
+    "imagePrompt": "AI asset valuation framework combining data, software, workflow, customers, and operational knowledge.\n\nThe strongest narrative connecting taed.dev and vendoreye is:\n\n> taed.dev converts difficult documents into structured evidence. vendoreye turns that evidence into a governed procurement process.\n\nThat distinction prevents both products from sounding like generic “AI-powered” tools. taed.dev solves the document-understanding layer; vendoreye creates broader value by embedding document intelligence inside supplier onboarding, verification, procurement, review, and continuous governance.",
     "slug": "valuing-ai-ip-beyond-patents-and-model-weights"
   },
   {
     "number": 126,
     "pillar": 13,
     "title": "OCR Is Not Document Intelligence: What Enterprises Actually Need",
-    "brief": "Why raw text extraction does not produce usable business data; classification, schemas, field validation, confidence, provenance, and human confirmation; where TAED fits.",
+    "brief": "Why raw text extraction does not produce usable business data; classification, schemas, field validation, confidence, provenance, and human confirmation; where taed.dev fits.",
     "imagePrompt": "Unstructured OCR text transforming into validated business fields.",
     "slug": "ocr-is-not-document-intelligence-what-enterprises-actually-need"
   },
@@ -1078,7 +1078,7 @@ export const editorialArticles = [
   {
     "number": 128,
     "pillar": 13,
-    "title": "How TAED Can Reduce Manual Data Entry During Vendor Onboarding",
+    "title": "How taed.dev Can Reduce Manual Data Entry During Vendor Onboarding",
     "brief": "Current manual workflow, repeated typing, error rates, review effort, exception handling, confirmation, and integrations; measure time saved per accepted document rather than documents merely processed.",
     "imagePrompt": "Manual document entry replaced by extraction plus a short verification step.",
     "slug": "how-taed-can-reduce-manual-data-entry-during-vendor-onboarding"
@@ -1095,7 +1095,7 @@ export const editorialArticles = [
     "number": 130,
     "pillar": 13,
     "title": "From Trade Licence to Procurement-Ready Vendor Record",
-    "brief": "Extracting legal name, licence number, issuing authority, activities, legal form, issue date, expiry date, and related fields; validation and reviewer confirmation; feeding VendorEye.",
+    "brief": "Extracting legal name, licence number, issuing authority, activities, legal form, issue date, expiry date, and related fields; validation and reviewer confirmation; feeding vendoreye.",
     "imagePrompt": "Trade licence on one side and a governed vendor profile on the other.",
     "slug": "from-trade-licence-to-procurement-ready-vendor-record"
   },
@@ -1166,15 +1166,15 @@ export const editorialArticles = [
   {
     "number": 139,
     "pillar": 13,
-    "title": "Why TAED Should Be a Replaceable Component—and Still Valuable IP",
-    "brief": "Provider-neutral integration, stable schemas, owned evaluation data, routing, corrections, and document contracts; durable TAED value beyond dependence on any one underlying model.",
-    "imagePrompt": "TAED acting as a stable document-intelligence layer above interchangeable model components.",
+    "title": "Why taed.dev Should Be a Replaceable Component—and Still Valuable IP",
+    "brief": "Provider-neutral integration, stable schemas, owned evaluation data, routing, corrections, and document contracts; durable taed.dev value beyond dependence on any one underlying model.",
+    "imagePrompt": "taed.dev acting as a stable document-intelligence layer above interchangeable model components.",
     "slug": "why-taed-should-be-a-replaceable-component-and-still-valuable-ip"
   },
   {
     "number": 140,
     "pillar": 13,
-    "title": "The TAED Roadmap: From Extraction API to Document Intelligence Platform",
+    "title": "The taed.dev Roadmap: From Extraction API to Document Intelligence Platform",
     "brief": "Current document extraction problem; potential evolution into contract management, schema registry, batch processing, workflow events, quality analytics, multilingual datasets, and industry packs. Label future capabilities clearly as roadmap concepts.",
     "imagePrompt": "Product evolution from single-document extraction to an enterprise intelligence platform.",
     "slug": "the-taed-roadmap-from-extraction-api-to-document-intelligence-platform"
@@ -1183,15 +1183,15 @@ export const editorialArticles = [
     "number": 141,
     "pillar": 14,
     "title": "Vendor Onboarding in the UAE Is Still an Email Problem",
-    "brief": "Attachments, version confusion, reminders, spreadsheets, missing evidence, internal approvals, and fragmented supplier communication; how VendorEye creates a structured intake process.",
+    "brief": "Attachments, version confusion, reminders, spreadsheets, missing evidence, internal approvals, and fragmented supplier communication; how vendoreye creates a structured intake process.",
     "imagePrompt": "Chaotic email attachments transforming into a controlled onboarding workflow.",
     "slug": "vendor-onboarding-in-the-uae-is-still-an-email-problem"
   },
   {
     "number": 142,
     "pillar": 14,
-    "title": "What Is VendorEye? An Evidence-First Procurement Platform for the GCC",
-    "brief": "VendorEye’s purpose, intended users, supplier intake, document evidence, verification, approvals, sourcing, ongoing governance, and the difference between vendor management and a basic supplier directory.",
+    "title": "What Is vendoreye? An Evidence-First Procurement Platform for the GCC",
+    "brief": "vendoreye’s purpose, intended users, supplier intake, document evidence, verification, approvals, sourcing, ongoing governance, and the difference between vendor management and a basic supplier directory.",
     "imagePrompt": "Complete supplier lifecycle organized around a central verified vendor record.",
     "slug": "what-is-vendoreye-an-evidence-first-procurement-platform-for-the-gcc"
   },
@@ -1214,7 +1214,7 @@ export const editorialArticles = [
   {
     "number": 145,
     "pillar": 14,
-    "title": "How VendorEye Connects Onboarding, Verification, and Sourcing",
+    "title": "How vendoreye Connects Onboarding, Verification, and Sourcing",
     "brief": "Why collecting supplier documents separately from sourcing creates duplication; using the verified record in qualification, RFQs, bids, awards, contracts, and renewals.",
     "imagePrompt": "Connected procurement journey from vendor registration to award and monitoring.",
     "slug": "how-vendoreye-connects-onboarding-verification-and-sourcing"
@@ -1254,7 +1254,7 @@ export const editorialArticles = [
   {
     "number": 150,
     "pillar": 14,
-    "title": "VendorEye Versus Spreadsheets: When Is It Time to Upgrade?",
+    "title": "vendoreye Versus Spreadsheets: When Is It Time to Upgrade?",
     "brief": "Warning signs—multiple trackers, undocumented approvals, missing evidence, renewal failures, limited access control, inconsistent vendor IDs, and poor auditability; migration plan.",
     "imagePrompt": "Spreadsheet grid progressively transforming into a governed procurement platform.",
     "slug": "vendoreye-versus-spreadsheets-when-is-it-time-to-upgrade"
@@ -1262,7 +1262,7 @@ export const editorialArticles = [
   {
     "number": 151,
     "pillar": 14,
-    "title": "VendorEye Versus Traditional Procurement Suites",
+    "title": "vendoreye Versus Traditional Procurement Suites",
     "brief": "Compare implementation speed, regional configuration, supplier experience, evidence management, integration breadth, sourcing depth, analytics, and total cost; identify cases where a major suite remains appropriate.",
     "imagePrompt": "Balanced comparison between a large procurement suite and a focused GCC-native platform.",
     "slug": "vendoreye-versus-traditional-procurement-suites"
@@ -1278,7 +1278,7 @@ export const editorialArticles = [
   {
     "number": 153,
     "pillar": 14,
-    "title": "How VendorEye Can Improve Procurement Audit Readiness",
+    "title": "How vendoreye Can Improve Procurement Audit Readiness",
     "brief": "Approval history, source documents, field corrections, timestamps, reviewer identity, bid history, exceptions, renewals, and exportable evidence packs; distinguish readiness support from guaranteeing compliance.",
     "imagePrompt": "Procurement activity assembling automatically into an organized audit evidence package.",
     "slug": "how-vendoreye-can-improve-procurement-audit-readiness"

@@ -10,13 +10,13 @@ export function buildLlmsTxt() {
 
 > AI7Lab is a research-led AI product company headquartered in Dubai, UAE. It combines technology research and market research to build enterprise products for visual intelligence, supplier intelligence, and multilingual voice-led automation.
 
-AI7Lab's current products are Taed, VendorEye, and RoleField.ai. The company serves enterprises across banking, insurance, government, healthcare, real estate, and logistics. Use the canonical pages below as the primary sources for facts about the company and its products.
+AI7Lab's current products are taed.dev, vendoreye, and rolefield.ai. The company serves enterprises across banking, insurance, government, healthcare, real estate, and logistics. Use the canonical pages below as the primary sources for facts about the company and its products.
 
 ## Primary pages
 
 ${line('Home', '/', 'Company overview, product portfolio, technology capabilities, industries, and latest announcements.')}
 ${line('Vision', '/vision', 'AI7Lab mission, research-to-product model, and team.')}
-${line('Products', '/products', 'Canonical overview of Taed, VendorEye, and RoleField.ai.')}
+${line('Products', '/products', 'Canonical overview of taed.dev, vendoreye, and rolefield.ai.')}
 ${line('Technology', '/technology', 'Visual intelligence, speech-to-speech research, agentic automation, and production infrastructure.')}
 ${line('Platform', '/platform', 'Shared enterprise AI architecture, capabilities, governance, and industry coverage.')}
 ${line('Insights', '/insights', '155 UAE and GCC enterprise AI research notes plus eighteen applied product field guides.')}
@@ -30,7 +30,7 @@ ${products.map((product) => line(product.name, product.external, product.descrip
 
 ## Industry insight collections
 
-${['Banking', 'Insurance', 'Government', 'Healthcare', 'Real Estate', 'Logistics'].map((industry) => line(`${industry} AI guides`, `/insights#${industry.toLowerCase().replace(/\s+/g, '-')}`, `Taed, VendorEye, and RoleField.ai guides for ${industry.toLowerCase()} workflows.`)).join('\n')}
+${['Banking', 'Insurance', 'Government', 'Healthcare', 'Real Estate', 'Logistics'].map((industry) => line(`${industry} AI guides`, `/insights#${industry.toLowerCase().replace(/\s+/g, '-')}`, `taed.dev, vendoreye, and rolefield.ai guides for ${industry.toLowerCase()} workflows.`)).join('\n')}
 
 ## Machine-readable resources
 
@@ -102,7 +102,7 @@ export function buildLlmsFullTxt() {
 - LinkedIn: https://www.linkedin.com/company/ai7lab/
 - Company type: Research-led enterprise AI product company
 - Operating model: AI7Lab combines technology research with market research, validates enterprise pain points, and turns reusable intelligence into production products.
-- Active products: Taed, VendorEye, and RoleField.ai
+- Active products: taed.dev, vendoreye, and rolefield.ai
 - Primary industries: Banking, insurance, government, healthcare, real estate, and logistics
 
 ## Core technology

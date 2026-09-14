@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
 import { Reveal } from "@/components/reveal"
@@ -15,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
 const layers = [
   {
     name: "Applications",
-    detail: "Taed, VendorEye, RoleField.ai",
+    detail: "taed.dev, vendoreye, rolefield.ai",
   },
   {
     name: "Intelligence Layer",
@@ -53,10 +54,10 @@ export default function PlatformPage() {
               <Reveal key={layer.name} delay={i * 80}>
                 <div className="flex flex-col gap-2 rounded-xl border border-border bg-card p-6 md:flex-row md:items-center md:justify-between">
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm text-primary">L{layers.length - i}</span>
-                    <h3 className="text-lg font-semibold tracking-tight">{layer.name}</h3>
+                    <span className="font-mono text-sm text-primary">L{formatBrand(layers.length - i)}</span>
+                    <h3 className="text-lg font-semibold tracking-tight">{formatBrand(layer.name)}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground md:max-w-md md:text-right">{layer.detail}</p>
+                  <p className="text-sm text-muted-foreground md:max-w-md md:text-right">{formatBrand(layer.detail)}</p>
                 </div>
               </Reveal>
             ))}
@@ -76,8 +77,8 @@ export default function PlatformPage() {
             {capabilities.map((c, i) => (
               <Reveal key={c.title} delay={(i % 3) * 80}>
                 <div className="flex h-full flex-col rounded-xl border border-border bg-card p-6">
-                  <h3 className="text-base font-semibold tracking-tight">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
+                  <h3 className="text-base font-semibold tracking-tight">{formatBrand(c.title)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{formatBrand(c.description)}</p>
                 </div>
               </Reveal>
             ))}
@@ -97,8 +98,8 @@ export default function PlatformPage() {
             {industries.map((ind, i) => (
               <Reveal key={ind.name} delay={(i % 3) * 60}>
                 <div className="h-full bg-card p-6">
-                  <h3 className="text-lg font-semibold tracking-tight">{ind.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ind.blurb}</p>
+                  <h3 className="text-lg font-semibold tracking-tight">{formatBrand(ind.name)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{formatBrand(ind.blurb)}</p>
                 </div>
               </Reveal>
             ))}

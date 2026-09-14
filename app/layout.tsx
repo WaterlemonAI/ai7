@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'KYC automation',
     'visual intelligence LLM',
     'speech to speech AI',
-    'RoleField',
+    'rolefield.ai',
   ],
   generator: 'v0.app',
   applicationName: 'AI7Lab',

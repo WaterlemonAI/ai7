@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
@@ -29,18 +30,18 @@ export default function AnnouncementsPage() {
               const body = (
                 <>
                   <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest">
-                    <span className="text-primary">{item.category}</span>
+                    <span className="text-primary">{formatBrand(item.category)}</span>
                     <span className="text-border">/</span>
                     <time dateTime={item.date} className="text-muted-foreground">
-                      {new Date(`${item.date}T00:00:00`).toLocaleDateString('en-AE', { month: 'long', day: 'numeric', year: 'numeric' })}
+                      {formatBrand(new Date(`${item.date}T00:00:00`).toLocaleDateString('en-AE', { month: 'long', day: 'numeric', year: 'numeric' }))}
                     </time>
                   </div>
                   <div className="mt-5 grid gap-5 md:grid-cols-[1fr_1.25fr]">
-                    <h2 className="text-balance text-2xl font-semibold tracking-tight md:text-3xl">{item.title}</h2>
+                    <h2 className="text-balance text-2xl font-semibold tracking-tight md:text-3xl">{formatBrand(item.title)}</h2>
                     <div>
-                      <p className="text-pretty leading-relaxed text-muted-foreground">{item.summary}</p>
+                      <p className="text-pretty leading-relaxed text-muted-foreground">{formatBrand(item.summary)}</p>
                       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium group-hover:text-primary">
-                        {item.cta ?? 'Explore announcement'} {external ? <ArrowUpRight className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
+                        {formatBrand(item.cta ?? 'Explore announcement')} {external ? <ArrowUpRight className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
                       </span>
                     </div>
                   </div>
@@ -49,9 +50,9 @@ export default function AnnouncementsPage() {
               return (
                 <Reveal key={item.slug} delay={index * 70}>
                   {external ? (
-                    <a href={item.href} target="_blank" rel="noreferrer" className="group block border-t border-border py-10 md:py-12">{body}</a>
+                    <a href={item.href} target="_blank" rel="noreferrer" className="group block border-t border-border py-10 md:py-12">{formatBrand(body)}</a>
                   ) : (
-                    <Link href={item.href} className="group block border-t border-border py-10 md:py-12">{body}</Link>
+                    <Link href={item.href} className="group block border-t border-border py-10 md:py-12">{formatBrand(body)}</Link>
                   )}
                 </Reveal>
               )

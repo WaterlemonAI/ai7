@@ -30,7 +30,9 @@ export function Navbar() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-        scrolled
+        pathname === '/'
+          ? 'border-b border-border/60 bg-background'
+          : scrolled
           ? 'border-b border-border/60 bg-background/70 backdrop-blur-xl'
           : 'border-b border-transparent bg-transparent',
       )}
@@ -74,6 +76,7 @@ export function Navbar() {
       </div>
 
       <div
+        inert={!open}
         className={cn(
           'overflow-hidden border-t border-border/60 bg-background lg:hidden',
           open ? 'max-h-[calc(100dvh-4rem)] overflow-y-auto' : 'max-h-0 border-t-0',

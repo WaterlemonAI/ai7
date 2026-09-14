@@ -72,8 +72,8 @@ export const getAiLibraryByNumber = (number: number) => aiLibraryArticles.find((
 export const getAiLibraryRelated = (article: AiLibraryArticle) => article.related.map(getAiLibraryByNumber).filter((item): item is AiLibraryArticle => Boolean(item))
 
 export const productContext = {
-  taed: { name:'TAED', href:taedUrl, copy:'Production systems need more than a prompt. TAED provides schema definition, validation, versioning, API exposure, and monitoring for visual, audio, and video AI workflows.' },
-  vendoreye: { name:'VendorEye', href:vendorEyeUrl, copy:'Procurement AI needs evidence and accountable decisions. VendorEye connects supplier intake, verification, sourcing, and continuing governance in one controlled workflow.' },
+  taed: { name:'taed.dev', href:taedUrl, copy:'Production systems need more than a prompt. taed.dev provides schema definition, validation, versioning, API exposure, and monitoring for visual, audio, and video AI workflows.' },
+  vendoreye: { name:'vendoreye', href:vendorEyeUrl, copy:'Procurement AI needs evidence and accountable decisions. vendoreye connects supplier intake, verification, sourcing, and continuing governance in one controlled workflow.' },
 }
 
 export const resourceSlugByName: Record<string, string> = {

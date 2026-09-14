@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import Link from 'next/link'
 import { Logo } from './logo'
 import { linkedInUrl, products } from '@/lib/site'
@@ -43,7 +44,7 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-sm font-medium text-foreground">{col.title}</h3>
+              <h3 className="text-sm font-medium text-foreground">{formatBrand(col.title)}</h3>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -51,7 +52,7 @@ export function Footer() {
                       href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link.label}
+                      {formatBrand(link.label)}
                     </Link>
                   </li>
                 ))}
@@ -62,7 +63,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-8 text-sm text-muted-foreground sm:flex-row sm:items-center">
           <div>
-            <p>© {new Date().getFullYear()} AI7Lab. All rights reserved.</p>
+            <p>© {formatBrand(new Date().getFullYear())} AI7Lab. All rights reserved.</p>
             <p className="mt-2 text-xs text-muted-foreground/70">
               AI7LAB Tech Innovation Limited, DIFC, Dubai, UAE
             </p>

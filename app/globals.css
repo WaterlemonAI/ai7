@@ -153,3 +153,31 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Product wordmark: preserve lowercase even within uppercase labels. */
+.brand-vendoreye,
+.brand-wordmark {
+  font-weight: 700 !important;
+  text-transform: lowercase !important;
+  font-style: normal;
+}
+
+/* Inline product identity. Existing dedicated logo rows can opt out in formatBrand. */
+.brand-mention {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  gap: 0.3em;
+  max-width: 100%;
+}
+.brand-mention > .brand-inline-logo {
+  display: inline-block;
+  width: 2.5em;
+  height: 1.2em;
+  min-width: 24px;
+  max-width: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.sr-only .brand-inline-logo { display: none; }

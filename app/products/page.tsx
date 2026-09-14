@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
@@ -11,9 +12,9 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata: Metadata = pageMetadata({
   title: "Products",
   description:
-    "Explore Taed, VendorEye, and RoleField.ai — AI7Lab products for visual intelligence, supplier intelligence, and voice-led automation.",
+    "Explore taed.dev, vendoreye, and rolefield.ai — AI7Lab products for visual intelligence, supplier intelligence, and voice-led automation.",
   path: "/products",
-  keywords: ['Taed API', 'VendorEye supplier intelligence', 'RoleField AI', 'enterprise AI products'],
+  keywords: ['taed.dev API', 'vendoreye supplier intelligence', 'rolefield.ai AI', 'enterprise AI products'],
 })
 
 export default function ProductsPage() {
@@ -22,7 +23,7 @@ export default function ProductsPage() {
       <PageHeader
         eyebrow="Our Products"
         title="Research becomes real when it ships."
-        description="Taed, VendorEye, and RoleField turn AI7Lab research into focused enterprise products—each built around a validated problem and powered by shared intelligence infrastructure."
+        description="taed.dev, vendoreye, and rolefield.ai turn AI7Lab research into focused enterprise products—each built around a validated problem and powered by shared intelligence infrastructure."
       />
 
       <section>
@@ -36,7 +37,7 @@ export default function ProductsPage() {
                 >
                   <div>
                     <div className="flex items-start gap-4">
-                      {product.logo && (
+                      {["vendoreye", "taed", "rolefield"].includes(product.slug) ? (<span className="text-3xl">{formatBrand(product.name)}</span>) : product.logo && (
                         <div className="relative h-16 w-40 shrink-0">
                           <Image
                             src={product.logo}
@@ -51,12 +52,12 @@ export default function ProductsPage() {
                           <span
                             className={`rounded-full border px-2.5 py-0.5 text-xs ${statusStyles[product.status]}`}
                           >
-                            {product.status}
+                            {formatBrand(product.status)}
                           </span>
                         </div>
                       </div>
                     </div>
-                    <p className="mt-2 text-pretty font-medium text-primary">{product.tagline}</p>
+                    <p className="mt-2 text-pretty font-medium text-primary">{formatBrand(product.tagline)}</p>
                     {product.external ? (
                       <a
                         href={product.external}
@@ -64,7 +65,7 @@ export default function ProductsPage() {
                         rel="noreferrer"
                         className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
-                        {product.external.replace("https://", "")}
+                        {formatBrand(product.external.replace("https://", ""))}
                         <ArrowUpRight className="h-4 w-4" />
                       </a>
                     ) : (
@@ -72,7 +73,7 @@ export default function ProductsPage() {
                         href="/contact"
                         className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
-                        {product.status === "Coming Soon" ? "Request early access" : "Get in touch"}
+                        {formatBrand(product.status === "Coming Soon" ? "Request early access" : "Get in touch")}
                         <ArrowUpRight className="h-4 w-4" />
                       </Link>
                     )}
@@ -80,18 +81,18 @@ export default function ProductsPage() {
 
                   <div>
                     <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-                      {product.description}
+                      {formatBrand(product.description)}
                     </p>
                     <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                       {product.points.map((point) => (
                         <li key={point} className="flex items-start gap-2.5 text-sm text-foreground/90">
                           <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                          {point}
+                          {formatBrand(point)}
                         </li>
                       ))}
                     </ul>
                     <Link href={`/insights/${blogPosts.find((post) => post.product === product.slug)?.slug}`} className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-foreground">
-                      Read {product.name} industry guides
+                      Read {formatBrand(product.name)} industry guides
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>

@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
@@ -25,13 +26,13 @@ export function Announcements() {
             const content = (
               <>
                 <div className="flex items-center justify-between gap-4 font-mono text-xs uppercase tracking-widest">
-                  <span className="text-primary">{item.category}</span>
+                  <span className="text-primary">{formatBrand(item.category)}</span>
                   <time className="text-muted-foreground" dateTime={item.date}>
-                    {new Date(`${item.date}T00:00:00`).toLocaleDateString('en-AE', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    {formatBrand(new Date(`${item.date}T00:00:00`).toLocaleDateString('en-AE', { month: 'short', day: 'numeric', year: 'numeric' }))}
                   </time>
                 </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-tight">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.summary}</p>
+                <h3 className="mt-8 text-xl font-semibold tracking-tight">{formatBrand(item.title)}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{formatBrand(item.summary)}</p>
                 <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-foreground group-hover:text-primary">
                   Read update {external ? <ArrowUpRight className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
                 </span>
@@ -42,11 +43,11 @@ export function Announcements() {
               <Reveal key={item.slug} delay={index * 70} className="bg-card/70">
                 {external ? (
                   <a href={item.href} target="_blank" rel="noreferrer" className="group flex h-full flex-col p-7 transition-colors hover:bg-background">
-                    {content}
+                    {formatBrand(content)}
                   </a>
                 ) : (
                   <Link href={item.href} className="group flex h-full flex-col p-7 transition-colors hover:bg-background">
-                    {content}
+                    {formatBrand(content)}
                   </Link>
                 )}
               </Reveal>

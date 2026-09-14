@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
@@ -33,7 +34,7 @@ export function Ecosystem() {
             <Reveal key={product.slug} delay={(i % 3) * 80}>
               <article className="group flex h-full flex-col rounded-2xl border border-border bg-card/50 p-6 transition-colors hover:border-primary/40">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="sr-only">{product.name}</h3>
+                  <h3 className="sr-only">{formatBrand(product.name, { logo: false })}</h3>
                   <div className="relative h-12 w-36">
                     <Image
                       src={product.logo}
@@ -45,12 +46,12 @@ export function Ecosystem() {
                   <span
                     className={`shrink-0 rounded-full border px-2.5 py-0.5 text-xs ${statusStyles[product.status]}`}
                   >
-                    {product.status}
+                    {formatBrand(product.status)}
                   </span>
                 </div>
-                <p className="mt-4 text-sm font-medium text-primary">{product.tagline}</p>
+                <p className="mt-4 text-sm font-medium text-primary">{formatBrand(product.tagline)}</p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {product.description}
+                  {formatBrand(product.description)}
                 </p>
 
                 {product.external ? (
@@ -60,7 +61,7 @@ export function Ecosystem() {
                     rel="noreferrer"
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-primary"
                   >
-                    Visit {product.external.replace('https://', '')}
+                    Visit {formatBrand(product.external.replace('https://', ''))}
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                 ) : (
@@ -68,7 +69,7 @@ export function Ecosystem() {
                     href={`/products#${product.slug}`}
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-primary"
                   >
-                    {product.status === 'Coming Soon' ? 'Join waitlist' : 'Learn more'}
+                    {formatBrand(product.status === 'Coming Soon' ? 'Join waitlist' : 'Learn more')}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 )}

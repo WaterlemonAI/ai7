@@ -1,3 +1,4 @@
+import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Banknote, MapPin } from 'lucide-react'
@@ -47,12 +48,12 @@ export default function CareersPage() {
               <Reveal key={job.slug} delay={index * 80}>
                 <Link href={`/careers/${job.slug}`} className="group grid gap-6 rounded-2xl border border-border bg-card p-7 transition-colors hover:border-primary/40 md:grid-cols-[1fr_auto] md:items-center md:p-8">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-widest text-primary">{job.product}</p>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-tight">{job.title}</h3>
-                    <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{job.summary}</p>
+                    <p className="font-mono text-xs uppercase tracking-widest text-primary">{formatBrand(job.product)}</p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-tight">{formatBrand(job.title)}</h3>
+                    <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{formatBrand(job.summary)}</p>
                     <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                      <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {job.location}</span>
-                      <span className="inline-flex items-center gap-2"><Banknote className="h-4 w-4 text-primary" /> AED {job.salaryMin.toLocaleString()}–{job.salaryMax.toLocaleString()} / month</span>
+                      <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {formatBrand(job.location)}</span>
+                      <span className="inline-flex items-center gap-2"><Banknote className="h-4 w-4 text-primary" /> AED {formatBrand(job.salaryMin.toLocaleString())}–{formatBrand(job.salaryMax.toLocaleString())} / month</span>
                     </div>
                   </div>
                   <span className="inline-flex items-center gap-2 text-sm font-medium group-hover:text-primary">View role <ArrowRight className="h-4 w-4" /></span>

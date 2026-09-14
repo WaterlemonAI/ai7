@@ -1,5 +1,6 @@
 'use client'
 
+import { formatBrand } from '@/lib/brand-text'
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 
@@ -31,7 +32,7 @@ export function WordReveal({ text, className, delay = 0, as = 'h2', trigger = 'v
   const Static = as
 
   if (!mounted || reduced) {
-    return <Static className={className}>{text}</Static>
+    return <Static className={className}>{formatBrand(text)}</Static>
   }
 
   const words = text.split(' ')
@@ -55,7 +56,7 @@ export function WordReveal({ text, className, delay = 0, as = 'h2', trigger = 'v
             transition={{ duration: 0.85, delay: delay + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
             className="inline-block"
           >
-            {word}
+            {formatBrand(word)}
           </motion.span>
         </span>
       ))}

@@ -19,8 +19,8 @@ export const editorialSources = [
   { title: 'AI Risk Management Framework', publisher: 'NIST', url: 'https://www.nist.gov/itl/ai-risk-management-framework' },
   { title: 'Generative AI Profile — NIST AI 600-1', publisher: 'NIST', url: 'https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence' },
   { title: 'Top 10 for LLM and GenAI', publisher: 'OWASP GenAI Security Project', url: 'https://genai.owasp.org/initiatives/top-10-for-llm-and-genai/' },
-  { title: 'TAED document intelligence APIs', publisher: 'TAED', url: taedUrl },
-  { title: 'VendorEye supplier intelligence platform', publisher: 'VendorEye', url: vendorEyeUrl },
+  { title: 'taed.dev document intelligence APIs', publisher: 'taed.dev', url: taedUrl },
+  { title: 'vendoreye supplier intelligence platform', publisher: 'vendoreye', url: vendorEyeUrl },
 ] as const
 
 export type EditorialArticle = (typeof editorialArticles)[number]
@@ -60,9 +60,9 @@ export function topicKeywords(article: EditorialArticle) {
     9: ['AI evaluation framework', 'LLM observability UAE'],
     10: ['AI governance UAE', 'responsible AI GCC'],
     11: ['voice agent economics', 'contact centre AI UAE'],
-    12: ['AI intellectual property UAE', 'TAED VendorEye'],
-    13: ['document intelligence UAE', 'Arabic English OCR API', 'TAED'],
-    14: ['vendor management software UAE', 'procurement platform GCC', 'VendorEye'],
+    12: ['AI intellectual property UAE', 'taed.dev vendoreye'],
+    13: ['document intelligence UAE', 'Arabic English OCR API', 'taed.dev'],
+    14: ['vendor management software UAE', 'procurement platform GCC', 'vendoreye'],
   }
   return [primaryKeyword(article), ...(pillarTerms[article.pillar] ?? []), 'enterprise AI UAE', 'artificial intelligence GCC']
 }
