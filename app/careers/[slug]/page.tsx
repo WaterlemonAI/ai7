@@ -121,7 +121,7 @@ export default async function JobPage({ params }: JobPageProps) {
             </section>
             <section>
               <h2 className="text-2xl font-semibold tracking-tight">About AI7Lab</h2>
-              <p className="mt-5 leading-relaxed text-muted-foreground">We are a small, research-led product company in Dubai. Technology research tells us what is newly possible. Market research tells us which enterprise problems matter. We combine both, build quickly, and learn directly from customers.</p>
+              <p className="mt-5 leading-relaxed text-muted-foreground">AI7Lab is a small core team in Dubai connecting AI research, engineering, and specialist delivery partners. We help enterprises and governments design, build, and operate customer-controlled AI environments, alongside our applied AI products.</p>
             </section>
           </div>
 

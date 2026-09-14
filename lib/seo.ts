@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const brandName = 'AI7Lab'
 export const defaultDescription =
-  'AI7Lab is a research-led AI product company in Dubai building visual intelligence, supplier intelligence, and multilingual voice automation for enterprises.'
+  'AI7Lab helps enterprises and governments design, build, and operate sovereign AI environments—from strategy and private compute to models, applications, governance, and operations.'
 
 export function pageMetadata({
   title,
@@ -16,7 +16,7 @@ export function pageMetadata({
   keywords?: string[]
 }): Metadata {
   const socialTitle = title.startsWith(brandName) ? title : `${title} | ${brandName}`
-  const socialImage = { url: '/opengraph-image', width: 1200, height: 630, alt: 'AI7Lab — Enterprise AI research and products from Dubai' }
+  const socialImage = { url: '/opengraph-image', width: 1200, height: 630, alt: 'AI7Lab — Sovereign AI, from strategy to production' }
   return {
     title,
     description,

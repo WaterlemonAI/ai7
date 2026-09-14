@@ -8,16 +8,16 @@ const line = (label: string, path: string, description: string) =>
 export function buildLlmsTxt() {
   return `# AI7Lab
 
-> AI7Lab is a research-led AI product company headquartered in Dubai, UAE. It combines technology research and market research to build enterprise products for visual intelligence, supplier intelligence, and multilingual voice-led automation.
+> AI7Lab is headquartered in Dubai, UAE and helps enterprises and governments design, build, and operate customer-controlled AI environments. Its seven connected disciplines are strategy, architecture, compute, intelligence, engineering, control, and operations.
 
-AI7Lab's current products are taed.dev, vendoreye, and rolefield.ai. The company serves enterprises across banking, insurance, government, healthcare, real estate, and logistics. Use the canonical pages below as the primary sources for facts about the company and its products.
+AI7Lab's current products are taed.dev, vendoreye, and rolefield.ai. Its applied products complement its sovereign AI delivery capabilities. Deployment models and control boundaries are defined per engagement; product availability does not imply that every product supports every deployment model. Use the canonical pages below as the primary sources for facts about the company and its products.
 
 ## Primary pages
 
-${line('Home', '/', 'Company overview, product portfolio, technology capabilities, industries, and latest announcements.')}
+${line('Home', '/', 'Sovereign AI positioning, the seven-discipline delivery loop, deployment models, and applied products.')}
 ${line('Vision', '/vision', 'AI7Lab mission, research-to-product model, and team.')}
 ${line('Products', '/products', 'Canonical overview of taed.dev, vendoreye, and rolefield.ai.')}
-${line('Technology', '/technology', 'Visual intelligence, speech-to-speech research, agentic automation, and production infrastructure.')}
+${line('Technology', '/technology', 'Seven-layer sovereign AI stack, governed orchestration, deployment modes, and production operations.')}
 ${line('Platform', '/platform', 'Shared enterprise AI architecture, capabilities, governance, and industry coverage.')}
 ${line('Insights', '/insights', '155 UAE and GCC enterprise AI research notes plus eighteen applied product field guides.')}
 ${line('Announcements', '/announcements', 'Product releases, research updates, leadership news, and company announcements.')}
@@ -90,7 +90,7 @@ export function buildLlmsFullTxt() {
 
   return `# AI7Lab: Full Site Context
 
-> Canonical machine-readable context for AI systems, search crawlers, research agents, and citation tools. Last reviewed 2026-08-19.
+> Canonical machine-readable context for AI systems, search crawlers, research agents, and citation tools. Last reviewed 2026-09-14.
 
 ## Organization
 
@@ -100,12 +100,15 @@ export function buildLlmsFullTxt() {
 - Website: ${siteUrl}
 - Email: contact@ai7lab.net
 - LinkedIn: https://www.linkedin.com/company/ai7lab/
-- Company type: Research-led enterprise AI product company
-- Operating model: AI7Lab combines technology research with market research, validates enterprise pain points, and turns reusable intelligence into production products.
+- Company type: Sovereign AI research, engineering, and delivery company
+- Operating model: A small core team coordinates research, architecture, specialist engineering partners, and delivery across the seven AI7 disciplines. Engagements define customer control boundaries and operational ownership.
 - Active products: taed.dev, vendoreye, and rolefield.ai
 - Primary industries: Banking, insurance, government, healthcare, real estate, and logistics
 
 ## Core technology
+
+- Sovereign AI delivery: Strategy, architecture, compute, intelligence, engineering, control, and operations.
+- Deployment choices: On-premise, dedicated private environments, and controlled hybrid designs, scoped to workload and customer requirements.
 
 - Visual intelligence: Multimodal understanding across documents, images, audio, and video, exposed through schema-controlled workflows and APIs.
 - Speech-to-speech intelligence: Natural multilingual voice interactions designed for Arabic, English, and the GCC's diverse language environment.

@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'AI7Lab — The Operating System for AI-Native Enterprises',
+    default: 'AI7Lab — Sovereign AI, from Strategy to Production',
     template: '%s | AI7Lab',
   },
   description: defaultDescription,
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     'AI platform',
     'Dubai AI',
     'UAE AI',
-    'AI venture studio',
+    'sovereign AI infrastructure',
     'AI compliance',
-    'KYC automation',
+    'private AI deployment',
     'visual intelligence LLM',
     'speech to speech AI',
     'rolefield.ai',
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
   openGraph: {
-    title: 'AI7Lab — The Operating System for AI-Native Enterprises',
+    title: 'AI7Lab — Sovereign AI, from Strategy to Production',
     description:
-      'A research-led AI product company building visual intelligence, supplier intelligence, and voice-led automation. Born in Dubai, designed for the world.',
+      'AI7Lab helps enterprises and governments design, build, and operate customer-controlled AI environments. Strategy, compute, models, engineering, governance, and operations.',
     url: siteUrl,
     siteName: 'AI7Lab',
     locale: 'en_AE',

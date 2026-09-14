@@ -9,7 +9,7 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Careers',
-  description: 'Join AI7Lab in the UAE. Explore open roles across enterprise AI products, research, sales, and partnerships.',
+  description: 'Join AI7Lab in Dubai to help bring sovereign AI from research and architecture into enterprise delivery. Explore current commercial and partnership roles.',
   path: '/careers',
   keywords: ['AI jobs UAE', 'AI careers Dubai', 'enterprise software sales jobs UAE', 'technology partnerships jobs UAE'],
 })
@@ -19,8 +19,8 @@ export default function CareersPage() {
     <>
       <PageHeader
         eyebrow="Careers"
-        title="Small team. Serious research. Products built for the real world."
-        description="Join a research-led product company where technology research and market research meet—and where the distance from customer signal to shipped product is refreshingly short."
+        title="Help bring customer-controlled AI into production."
+        description="Join a small core team connecting AI research, engineering, enterprise delivery, and commercial development. We work with specialist partners to build AI systems that organisations can control and operate."
       />
 
       <section className="border-b border-border">
@@ -30,7 +30,7 @@ export default function CareersPage() {
             <div>
               <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">Less hierarchy. More signal.</h2>
               <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-                Researchers, engineers, product builders, and commercial operators work as one team. You will help validate the market, shape the product, and take it into enterprise environments—not hand work across a maze of departments.
+                Our core team works with researchers, engineers, and specialist delivery partners. You will connect customer needs with practical AI capabilities, helping move opportunities from a defined use case to a governed production environment.
               </p>
             </div>
           </Reveal>

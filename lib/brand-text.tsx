@@ -17,7 +17,7 @@ export function formatBrand(value: ReactNode, { logo = true }: { logo?: boolean 
     if (!brand) return <Fragment key={index}>{part}</Fragment>
     const wordmark = <strong className="brand-wordmark" style={{ fontWeight: 700, textTransform: 'lowercase', fontStyle: 'normal' }}>{brand.name}</strong>
     return <span key={index} className="brand-mention">
-      {logo && <Image src={brand.logo} alt="" aria-hidden="true" width={64} height={24} className="brand-inline-logo" />}
+      {logo && <Image src={brand.logo} alt="" aria-hidden="true" loading="eager" unoptimized width={64} height={24} className="brand-inline-logo" />}
       {wordmark}
     </span>
   })

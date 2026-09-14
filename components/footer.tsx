@@ -38,7 +38,7 @@ export function Footer() {
               <Logo className="h-[50px] w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A research-led AI product company building enterprise intelligence in Dubai, for the world.
+              From strategy and private compute to models, engineering, governance, and operations. AI7Lab helps enterprises and governments build AI they control.
             </p>
           </div>
 

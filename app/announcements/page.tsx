@@ -19,8 +19,8 @@ export default function AnnouncementsPage() {
     <>
       <PageHeader
         eyebrow="Announcements"
-        title="What we are shipping, learning, and building next."
-        description="Follow product releases, research milestones, leadership updates, and the latest from our team in Dubai."
+        title="Progress from research to production."
+        description="Follow AI7Lab’s product releases, research milestones, partnerships, and team updates as we build the capabilities behind customer-controlled AI."
       />
       <section>
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">

@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: "Get in touch with the AI7Lab team in Dubai, UAE.",
+  description: "Plan your sovereign AI environment with AI7Lab in Dubai: strategy, private compute, models, engineering, governance, and production operations.",
   path: "/contact",
   keywords: ['AI company Dubai contact', 'enterprise AI UAE'],
 })
@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 const details = [
   { icon: MapPin, label: "Headquarters", value: "Dubai, United Arab Emirates" },
   { icon: Mail, label: "Email", value: "contact@ai7lab.net", href: "mailto:contact@ai7lab.net" },
-  { icon: Building2, label: "For", value: "Enterprises, partners & investors" },
+  { icon: Building2, label: "For", value: "Enterprises, governments & delivery partners" },
 ]
 
 export default async function ContactPage({ searchParams }: { searchParams: Promise<{ interest?: string }> }) {
@@ -24,8 +24,8 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Let's build the AI-native future together."
-        description="Whether you're an enterprise ready to deploy, a partner exploring collaboration, or an investor tracking the region's AI landscape — we'd love to hear from you."
+        title="Design an AI environment you control."
+        description="Tell us what you want AI to do, where it needs to run, and what must remain under your control. We’ll help define the use case, architecture, delivery scope, and operating model."
       />
 
       <section>
@@ -51,7 +51,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
           </Reveal>
 
           <Reveal delay={120}>
-            <ContactForm initialInterest={interest} />
+            <h2 className="mb-3 text-2xl font-semibold tracking-tight">Start with your requirements.</h2><p className="mb-7 leading-relaxed text-muted-foreground">Share your current systems, data residency needs, and priorities. The first conversation will help identify the right starting point across the AI7 delivery loop.</p><ContactForm initialInterest={interest} />
           </Reveal>
         </div>
       </section>

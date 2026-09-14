@@ -1,3 +1,4 @@
+import { DeliveryCTA } from '@/components/delivery-cta'
 import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -24,8 +25,8 @@ export default function InsightsPage() {
     <>
       <PageHeader
         eyebrow="Insights"
-        title="The production AI field guide for the UAE and GCC."
-        description="155 strategic, technical, and research-backed guides for leaders turning AI ambition into governed enterprise systems—plus applied field notes from the teams behind taed.dev, vendoreye, and rolefield.ai."
+        title="From AI strategy to systems you control."
+        description="Explore practical perspectives on sovereignty, architecture, compute, models, engineering, governance, and operations—alongside applied product field notes from taed.dev, vendoreye, and rolefield.ai."
       />
 
       <section id="ai-in-x-library" className="scroll-mt-24 border-b border-border bg-background"><div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-24">
@@ -91,6 +92,6 @@ export default function InsightsPage() {
           })}
         </div>
       </div>
-    </>
+    <DeliveryCTA /></>
   )
 }

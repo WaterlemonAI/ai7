@@ -1,3 +1,4 @@
+import { DeliveryCTA } from '@/components/delivery-cta'
 import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from "next"
 import Link from "next/link"
@@ -22,8 +23,8 @@ export default function ProductsPage() {
     <>
       <PageHeader
         eyebrow="Our Products"
-        title="Research becomes real when it ships."
-        description="taed.dev, vendoreye, and rolefield.ai turn AI7Lab research into focused enterprise products—each built around a validated problem and powered by shared intelligence infrastructure."
+        title="Applied intelligence. Built for real workflows."
+        description="taed.dev, vendoreye, and rolefield.ai demonstrate AI7Lab’s applied work in multimodal intelligence, supplier workflows, and voice-led automation. Alongside these products, we design, build, and operate customer-controlled AI environments."
       />
 
       <section>
@@ -65,7 +66,7 @@ export default function ProductsPage() {
                         rel="noreferrer"
                         className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
-                        {formatBrand(product.external.replace("https://", ""))}
+                        {formatBrand(product.external.replace(/^https?:\/\/(?:www\.)?/, ""))}
                         <ArrowUpRight className="h-4 w-4" />
                       </a>
                     ) : (
@@ -102,6 +103,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-    </>
+    <DeliveryCTA products /></>
   )
 }

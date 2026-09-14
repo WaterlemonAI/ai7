@@ -1,44 +1,35 @@
+import { DeliveryCTA } from '@/components/delivery-cta'
+import { stages } from '@/components/home/sovereign/stages'
 import { formatBrand } from '@/lib/brand-text'
 import type { Metadata } from "next"
 import { PageHeader } from "@/components/page-header"
 import { Reveal } from "@/components/reveal"
-import { capabilities, industries } from "@/lib/site"
+import { industries } from "@/lib/site"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
   title: "Platform",
   description:
-    "The AI7Lab platform: capabilities, architecture, and industry solutions for AI-native enterprises.",
+    "Explore how AI7Lab assembles customer-controlled AI environments across infrastructure, data, models, applications, governance, and operations.",
   path: "/platform",
   keywords: ['enterprise AI platform', 'multimodal AI platform', 'AI governance infrastructure', 'AI APIs UAE'],
 })
 
 const layers = [
-  {
-    name: "Applications",
-    detail: "taed.dev, vendoreye, rolefield.ai",
-  },
-  {
-    name: "Intelligence Layer",
-    detail: "Visual intelligence LLM, speech-to-speech models, goal-based agents",
-  },
-  {
-    name: "Trust & Compliance",
-    detail: "Policy controls, evidence, auditability, secure human handoffs",
-  },
-  {
-    name: "Infrastructure",
-    detail: "Versioned APIs, RBAC, encryption, observability, SOC 2 posture",
-  },
+  { name: "Applications & workflows", detail: "Enterprise applications, integrations, agents, and human review" },
+  { name: "Models & intelligence", detail: "Open and private models, RAG, multimodal AI, and model routing" },
+  { name: "Data & knowledge", detail: "Controlled ingestion, retrieval, permissions, and data residency" },
+  { name: "Compute & infrastructure", detail: "GPUs, storage, networking, model serving, and capacity planning" },
+  { name: "Control across every layer", detail: "Identity, policy, evaluations, audit trails, and operational monitoring" },
 ]
 
 export default function PlatformPage() {
   return (
     <>
       <PageHeader
-        eyebrow="The Platform"
-        title="One stack. Every AI capability your enterprise needs."
-        description="AI7Lab products share a common foundation — a layered platform that pairs autonomous intelligence with enterprise-grade trust, security, and governance."
+        eyebrow="Your AI Environment"
+        title="An AI stack designed around your organisation."
+        description="We select and integrate the infrastructure, models, data systems, and applications your workloads need. The architecture defines what you own, where workloads run, how access is governed, and who operates each layer."
       />
 
       <section className="border-b border-border">
@@ -46,7 +37,7 @@ export default function PlatformPage() {
           <Reveal>
             <p className="font-mono text-sm uppercase tracking-[0.2em] text-primary">Architecture</p>
             <h2 className="mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-tight md:text-4xl">
-              A layered operating system.
+              Connected layers. Explicit control boundaries.
             </h2>
           </Reveal>
           <div className="mt-12 space-y-3">
@@ -70,11 +61,11 @@ export default function PlatformPage() {
           <Reveal>
             <p className="font-mono text-sm uppercase tracking-[0.2em] text-primary">Capabilities</p>
             <h2 className="mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-tight md:text-4xl">
-              What we build with.
+              Seven disciplines, from strategy to operations.
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((c, i) => (
+            {stages.map((c, i) => (
               <Reveal key={c.title} delay={(i % 3) * 80}>
                 <div className="flex h-full flex-col rounded-xl border border-border bg-card p-6">
                   <h3 className="text-base font-semibold tracking-tight">{formatBrand(c.title)}</h3>
@@ -91,7 +82,7 @@ export default function PlatformPage() {
           <Reveal>
             <p className="font-mono text-sm uppercase tracking-[0.2em] text-primary">Industries</p>
             <h2 className="mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-tight md:text-4xl">
-              Deployed across regulated sectors.
+              Use cases across enterprise and government.
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -106,6 +97,6 @@ export default function PlatformPage() {
           </div>
         </div>
       </section>
-    </>
+    <DeliveryCTA /></>
   )
 }

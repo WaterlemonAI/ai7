@@ -1,6 +1,7 @@
+import { ParticleJourney } from './particle-journey'
 import { formatBrand } from '@/lib/brand-text'
 import { products } from '@/lib/site'
-import { AI7Loop, DeploymentModes, GovernanceFlow, IntelligenceRouter, LoopDiagram, MotionBoundary } from './interactive'
+import { AI7Loop, DeploymentModes, GovernanceFlow, IntelligenceRouter, MotionBoundary } from './interactive'
 import { stages } from './stages'
 import s from './sovereign.module.css'
 
@@ -33,7 +34,7 @@ function ContactLink({ secondary = false, children = 'Design Your AI Stack' }: {
 export function SovereignHome() {
   return <div className={s.home}>
     <section className={s.hero} aria-labelledby="home-title"><div className={s.wrap}>
-      <div className={s.heroGrid}><div className={s.heroCopy}><span className={s.eyebrow}><i /> SOVEREIGN AI · END TO END</span><h1 id="home-title">Build AI<br />you <em>control.</em></h1><p>AI7Lab helps enterprises and governments design, build and operate private AI environments, from strategy and GPUs to models, applications, guardrails and production operations.</p><div className={s.actions}><ContactLink /><a className={s.textLink} href="#ai7-loop">Explore the AI7 Loop <span aria-hidden="true">↓</span></a></div></div><MotionBoundary className={s.heroDiagram}><div className={s.diagramCaption}><span>AI7 / SYSTEM TOPOLOGY</span><span>01 — 07 ↺</span></div><LoopDiagram /><div className={s.diagramFooter}><span><i /> ONE INTEGRATED ENVIRONMENT</span><span>BUILT AROUND YOU</span></div></MotionBoundary></div>
+      <div className={s.heroGrid}><div className={s.heroCopy}><span className={s.eyebrow}><i /> SOVEREIGN AI · END TO END</span><h1 id="home-title">Build AI<br />you <em>control.</em></h1><p>AI7Lab helps enterprises and governments design, build and operate private AI environments, from strategy and GPUs to models, applications, guardrails and production operations.</p><div className={s.actions}><ContactLink /><a className={s.textLink} href="#ai7-loop">Explore the AI7 Loop <span aria-hidden="true">↓</span></a></div></div><MotionBoundary className={s.heroDiagram}><ParticleJourney /><div className={s.diagramFooter}><span><i /> ONE INTEGRATED ENVIRONMENT</span><span>BUILT AROUND YOU</span></div></MotionBoundary></div>
       <div className={s.heroBase}><span>RESEARCH TO PRODUCTION</span><p>AI Researchers <b>+</b> Forward Deployed Engineers <b>+</b> Compute <b>+</b> Software <b>+</b> Governance</p></div>
     </div></section>
 

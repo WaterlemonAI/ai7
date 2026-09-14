@@ -27,8 +27,8 @@ export const partnerPages = {
   },
   enterprises: {
     slug:'enterprises', nav:'Enterprises', icon:Building2, eyebrow:'For enterprise leaders',
-    title:'Access the AI market without turning your company into a lab.',
-    description:'AI7Lab gives enterprise teams a governed route to specialized AI products and exceptional builders—then hardens the most relevant solution for security, scale, integration, and measurable business outcomes.',
+    title:'Build customer-controlled AI with the right specialists.',
+    description:'AI7Lab helps enterprise teams define the use case and control boundaries, select the right models and specialist capabilities, and connect infrastructure, engineering, governance, and operations in one delivery plan.',
     promise:'Explore faster, commit later. Start with one controlled workflow and scale only when the evidence supports it.',
     primaryCta:'Design an enterprise AI pipeline', interest:'Enterprise AI pipeline',
     outcomes:['A curated solution shortlist','Faster path from problem to live proof','Lower experimentation and license risk','Enterprise controls built into the scale decision'],
@@ -52,7 +52,7 @@ export const partnerPages = {
   'technology-providers': {
     slug:'technology-providers', nav:'Technology providers', icon:CloudCog, eyebrow:'For technology and infrastructure providers',
     title:'Reach a portfolio of builders through one qualified ecosystem.',
-    description:'AI7Lab helps cloud, compute, storage, model, data, security, and hardware providers support multiple AI startups and enterprise proofs through a coordinated technical and commercial channel.',
+    description:'AI7Lab connects cloud, compute, storage, model, data, security, and hardware providers with qualified builders and sovereign AI engagements. Architecture, data residency, integration, and operating responsibilities determine the right fit.',
     promise:'Replace fragmented one-off outreach with qualified workloads, shared enablement, measurable adoption, and clearer routes to future enterprise demand.',
     primaryCta:'Explore an ecosystem partnership', interest:'Technology provider partnership',
     outcomes:['Qualified startup and workload access','More efficient technical enablement','Earlier visibility into emerging demand','Joint pathways from startup proof to enterprise scale'],
