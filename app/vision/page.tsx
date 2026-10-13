@@ -114,35 +114,34 @@ export default function VisionPage() {
                   <span className="text-right text-muted-foreground">{member.focus}</span>
                 </div>
 
-                {member.photo ? (
-                  <div className="relative aspect-[5/4] overflow-hidden bg-card">
-                    <Image
-                      src={member.photo}
-                      alt={`Portrait of ${member.name}`}
-                      fill
-                      className="object-cover grayscale-[12%] transition duration-700 ease-out group-hover:scale-[1.025] group-hover:grayscale-0"
-                      style={{ objectPosition: member.photoPosition ?? 'center' }}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[color-mix(in_srgb,var(--ai7-deep)_24%,transparent)] to-transparent opacity-60"
-                    />
-                  </div>
-                ) : (
-                  <div className="grid aspect-[5/4] place-content-center bg-card font-serif text-6xl text-primary">
-                    {member.name.charAt(0)}
-                  </div>
-                )}
-
-                <div className="relative flex flex-1 flex-col p-6 sm:p-7">
+                <div className="relative flex flex-1 flex-col p-6 sm:min-h-[22rem] sm:p-7">
                   <span
                     aria-hidden="true"
                     className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-[linear-gradient(90deg,var(--ai7-deep),var(--ai7-mid),var(--ai7-sky),var(--ai7-cyan))] transition-transform duration-500 group-hover:scale-x-100"
                   />
-                  <h3 className="font-serif text-3xl font-medium tracking-[-0.035em]">{member.name}</h3>
+
+                  <div className="relative h-20 w-20 shrink-0 rounded-full bg-[linear-gradient(135deg,var(--ai7-deep),var(--ai7-sky),var(--ai7-cyan))] p-[2px] sm:h-24 sm:w-24">
+                    <div className="relative h-full w-full overflow-hidden rounded-full bg-card ring-4 ring-white">
+                      {member.photo ? (
+                        <Image
+                          src={member.photo}
+                          alt={`Portrait of ${member.name}`}
+                          fill
+                          className="object-cover grayscale-[8%] transition duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                          style={{ objectPosition: member.photoPosition ?? 'center' }}
+                          sizes="96px"
+                        />
+                      ) : (
+                        <span className="grid h-full place-content-center font-serif text-3xl text-primary">
+                          {member.name.charAt(0)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  <h3 className="mt-8 font-serif text-3xl font-medium tracking-[-0.035em]">{member.name}</h3>
                   <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-primary">{member.role}</p>
-                  <p className="mt-6 text-sm leading-6 text-muted-foreground">{member.bio}</p>
+                  <p className="mt-auto pt-7 text-sm leading-6 text-muted-foreground">{member.bio}</p>
                 </div>
               </article>
             ))}
