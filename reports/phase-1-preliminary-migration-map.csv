@@ -1,0 +1,25 @@
+current_path,current_purpose,preliminary_action,proposed_destination,decision_dependency
+/,Sovereign AI homepage,Rewrite in place,/,Approved company positioning
+/vision,Vision ecosystem and team,Preserve until data review,/vision or /about,Search Console and backlink data
+/products,Three-product overview,Rewrite for two principal products plus Taed tool showcase,/products,Approved portfolio hierarchy
+/products/vendoreye,Does not exist,Create new page,/products/vendoreye,Approved Vendoreye claims
+/products/rolefield,Does not exist,Create new page,/products/rolefield,Approved RoleField claims
+/showcase/taed,Does not exist,Create detailed tool and capability showcase,Final route to be confirmed,Approved Taed milestone wording
+/partners,Partnership ecosystem,Preserve and reassess,/partners,Partnership programme scope
+/partners/builders,Builder partnership,Preserve or later redirect,To be decided,Builder programme status and traffic
+/partners/enterprises,Enterprise AI partnership,Preserve or evolve,/partners/enterprises or /enterprise-ai,Information architecture and traffic
+/partners/technology-providers,Provider partnership,Preserve or later redirect,To be decided,Provider programme status and traffic
+/platform,Shared AI platform,Preserve pending consolidation,/platform or /technology,Traffic and content overlap
+/technology,Sovereign AI stack,Rewrite in place,/technology,Approved technology narrative
+/insights,Research hub,Retain and redesign,/insights,None
+/insights/[slug],Applied product and tool guides,Retain URLs and update hierarchy,Same URL,Taed showcase context per article
+/insights/research/[slug],Research library,Retain URLs,Same URL,Factual refresh only
+/insights/ai-in-x/[slug],Industry resource library,Retain URLs,Same URL,Snippet and CTA refresh
+/announcements,Dated company news,Retain,/announcements,Historical accuracy review
+/careers,Careers index,Retain,/careers,Verified vacancies
+/careers/head-of-sales-vendoreye,Vendoreye sales role,Keep if open otherwise 301,Same URL or /careers,Role status
+/careers/head-of-partnerships-taed,Taed partnership role,Keep if open otherwise 301,Same URL or /careers,Role status
+/contact,Enquiry page,Retain and improve,/contact,Conversion requirements
+/llms.txt,AI discovery summary,Retain and rewrite,/llms.txt,Approved company and product facts
+/llms-full.txt,AI discovery full context,Retain and rewrite,/llms-full.txt,Approved company and product facts
+/resources/*,Downloadable lead assets,Retain paths,Same URL,Traffic and campaign link review

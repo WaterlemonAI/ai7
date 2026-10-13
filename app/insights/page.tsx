@@ -13,7 +13,7 @@ import { aiLibraryArticles, aiLibraryClusters } from '@/lib/ai-library'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Enterprise AI Insights',
-  description: '155 research-backed enterprise AI guides for UAE and GCC leaders, spanning strategy, data, voice AI, proprietary IP, document intelligence, procurement, evaluation, security, and governance.',
+  description: '155 research-backed AI guides and applied product field notes for UAE and GCC leaders moving agentic AI into real operations.',
   path: '/insights',
   keywords: ['enterprise AI UAE', 'AI solutions UAE', 'artificial intelligence GCC', 'Dubai AI company', 'AI governance UAE', 'Arabic AI'],
 })
@@ -25,8 +25,8 @@ export default function InsightsPage() {
     <>
       <PageHeader
         eyebrow="Insights"
-        title="From AI strategy to systems you control."
-        description="Explore practical perspectives on sovereignty, architecture, compute, models, engineering, governance, and operations—alongside applied product field notes from taed.dev, vendoreye, and rolefield.ai."
+        title="From AI possibility to operating reality."
+        description="Explore practical perspectives on agentic systems, architecture, products, evaluation, governance and operations—alongside applied field notes from Vendoreye, RoleField and Taed."
       />
 
       <section id="ai-in-x-library" className="scroll-mt-24 border-b border-border bg-background"><div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-24">

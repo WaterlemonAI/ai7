@@ -4,13 +4,11 @@ export const siteUrl = 'https://www.ai7lab.net'
 export const linkedInUrl = 'https://www.linkedin.com/company/ai7lab/'
 
 export const nav = [
-  { label: 'Vision', href: '/vision' },
   { label: 'Products', href: '/products' },
-  { label: 'Partner', href: '/partners' },
+  { label: 'Enterprise AI', href: '/enterprise-ai' },
   { label: 'Technology', href: '/technology' },
   { label: 'Insights', href: '/insights' },
-  { label: 'Announcements', href: '/announcements' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'Company', href: '/vision' },
 ]
 
 export type Product = {
@@ -27,22 +25,11 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    name: 'taed.dev',
-    slug: 'taed',
-    tagline: 'Production-Grade Visual Intelligence APIs',
-    description:
-      'Turn documents, images, video, and audio into structured, versioned, monitored APIs. taed.dev packages AI7Lab’s visual intelligence research into schema-controlled infrastructure teams can take to production.',
-    status: 'Live',
-    external: taedUrl,
-    logo: '/logo-taed.png',
-    points: ['Any-media understanding', 'Schema-controlled outputs', 'Versioned and monitored APIs', 'Reusable enterprise workflows'],
-  },
-  {
-    name: 'vendoreye',
+    name: 'Vendoreye',
     slug: 'vendoreye',
-    tagline: 'Supplier Intelligence from First Contact to Governance',
+    tagline: 'Supplier and Opportunity Intelligence',
     description:
-      'See beyond the vendor. vendoreye discovers, verifies, assesses, qualifies, and continuously monitors suppliers while building an evidence-backed vendor record for every decision.',
+      'See beyond the vendor. Vendoreye discovers, verifies, assesses, qualifies, and continuously monitors suppliers while building an evidence-backed vendor record for every decision.',
     status: 'Live',
     external: vendorEyeUrl,
     logo: '/logo-vendoreye.png',
@@ -51,14 +38,25 @@ export const products: Product[] = [
   {
     name: 'rolefield.ai',
     slug: 'rolefield',
-    tagline: 'A Multilingual AI Workforce for the GCC',
+    tagline: 'End-to-End Customer Operations AI',
     description:
-      'Voice-led AI agents that understand intent, hold natural conversations, and complete the work after every interaction—from qualification and scheduling to follow-up, CRM updates, and human handoffs.',
+      'One operating layer for support, calling and call-centre operations, with in-person kiosk AI through Seer. RoleField handles conversations, actions, quality, escalation and operational visibility across the customer journey.',
     status: 'Live',
     external: 'https://www.rolefield.ai',
     linkedIn: 'https://www.linkedin.com/showcase/rolefield.ai/',
     logo: '/logo-rolefield.png',
-    points: ['In-house speech-to-speech architecture', 'Arabic-native and multilingual', 'Goal-based task automation', 'CRM actions and human handoffs'],
+    points: ['Support operations', 'Calling and call-centre operations', 'Seer kiosk AI', 'Quality, actions and human handoffs'],
+  },
+  {
+    name: 'taed.dev',
+    slug: 'taed',
+    tagline: 'Structured Intelligence from Unstructured Media',
+    description:
+      'An AI7Lab-built tool for turning documents, images, video, and audio into schema-controlled outputs. Taed remains a supporting technology capability rather than a principal portfolio product.',
+    status: 'Live',
+    external: taedUrl,
+    logo: '/logo-taed.png',
+    points: ['Any-media understanding', 'Schema-controlled outputs', 'Versioned and monitored APIs', 'Reusable enterprise workflows'],
   },
 ]
 
@@ -128,10 +126,10 @@ export const announcements: Announcement[] = [
     slug: 'vendoreye-gcc-vendor-lifecycle-marketplace-launch',
     date: '2026-08-19',
     category: 'Product',
-    title: 'vendoreye launches a GCC-first vendor onboarding and lifecycle management portal',
-    summary: 'vendoreye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
+    title: 'Vendoreye launches a GCC-first vendor onboarding and lifecycle management portal',
+    summary: 'Vendoreye brings vendor onboarding, due diligence, approvals, continuous lifecycle management, and a built-in vendor marketplace into one platform designed around GCC business requirements.',
     href: vendorEyeUrl,
-    cta: 'Explore vendoreye',
+    cta: 'Explore Vendoreye',
   },
   {
     slug: 'dr-riya-rawal-ai-research-leadership',
@@ -155,7 +153,7 @@ export const announcements: Announcement[] = [
     date: '2026-08-18',
     category: 'Research',
     title: 'One intelligence layer, multiple enterprise products',
-    summary: 'Our visual intelligence, voice, and agentic automation research is becoming reusable infrastructure beneath taed.dev, vendoreye, and rolefield.ai.',
+    summary: 'Our visual intelligence, voice, and agentic automation research is becoming reusable infrastructure beneath taed.dev, Vendoreye, and rolefield.ai.',
     href: '/technology',
   },
   {
@@ -163,7 +161,7 @@ export const announcements: Announcement[] = [
     date: '2026-08-18',
     category: 'Leadership',
     title: 'AI7Lab is hiring two commercial leaders in the UAE',
-    summary: 'We are opening searches for a Head of Sales for vendoreye and a Head of Partnerships for taed.dev.',
+    summary: 'We are opening searches for a Head of Sales for Vendoreye and a Head of Partnerships for taed.dev.',
     href: '/careers',
   },
 ]
@@ -224,12 +222,12 @@ export type Job = {
 export const jobs: Job[] = [
   {
     slug: 'head-of-sales-vendoreye',
-    title: 'Head of Sales — vendoreye',
-    product: 'vendoreye',
+    title: 'Head of Sales — Vendoreye',
+    product: 'Vendoreye',
     location: 'United Arab Emirates',
     salaryMin: 15000,
     salaryMax: 20000,
-    summary: 'Own vendoreye’s enterprise sales motion across the UAE and turn procurement and supplier-risk conversations into durable customer relationships.',
+    summary: 'Own Vendoreye’s enterprise sales motion across the UAE and turn procurement and supplier-risk conversations into durable customer relationships.',
     responsibilities: ['Build and own the UAE enterprise pipeline', 'Lead discovery, demos, proposals, and commercial negotiation', 'Develop sector-specific sales plays with product and leadership', 'Carry customer signal back into the product roadmap'],
     requirements: ['Enterprise SaaS or procurement-technology sales experience', 'Strong UAE network and consultative selling capability', 'Comfort selling into complex, regulated organizations', 'Builder mindset suited to an early-stage product company'],
   },

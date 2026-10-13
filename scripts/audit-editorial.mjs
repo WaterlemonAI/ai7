@@ -44,7 +44,7 @@ const pageSignals = {
   voiceRealityBoxes: ['Economic reality', 'What remains difficult', 'Expected shelf life', 'Human fallback', 'Replaceability'].every((label) => page.includes(label)),
   productDisclosure: page.includes('AI7Lab builds {productName}') && page.includes('Product relationship and alternatives'),
   alternativesGuidance: page.includes('more suitable') && page.includes('more appropriate'),
-  conversionActions: page.includes('Test one representative document with TAED') && page.includes('Map one complete supplier journey with VendorEye'),
+  conversionActions: page.includes('Test one representative document with TAED') && page.includes('Map one complete supplier journey with Vendoreye'),
   sitemapCoverage: sitemap.includes('editorialArticles.map') && sitemap.includes('/insights/research/${post.slug}'),
   llmDiscovery: llms.includes('editorialArticles.map') && llms.includes('/insights/research/${post.slug}'),
   indexCoverage: index.includes('editorialPillars.map') && index.includes('editorialArticles.filter'),

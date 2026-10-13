@@ -1,0 +1,142 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Encrypted DynamoDB storage and least-privilege application policy for AI7Lab website subscribers and scheduled calls.
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+    AllowedValues:
+      - development
+      - staging
+      - production
+  EnableDeletionProtection:
+    Type: String
+    Default: 'true'
+    AllowedValues:
+      - 'true'
+      - 'false'
+
+Conditions:
+  UseDeletionProtection: !Equals [!Ref EnableDeletionProtection, 'true']
+
+Resources:
+  SubscribersTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      DeletionProtectionEnabled: !If [UseDeletionProtection, true, false]
+      AttributeDefinitions:
+        - AttributeName: email
+          AttributeType: S
+        - AttributeName: status
+          AttributeType: S
+        - AttributeName: updatedAt
+          AttributeType: S
+      KeySchema:
+        - AttributeName: email
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: StatusUpdatedAtIndex
+          KeySchema:
+            - AttributeName: status
+              KeyType: HASH
+            - AttributeName: updatedAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+      Tags:
+        - Key: Application
+          Value: ai7lab-website
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: DataClassification
+          Value: customer-contact-data
+
+  ScheduledCallsTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      DeletionProtectionEnabled: !If [UseDeletionProtection, true, false]
+      AttributeDefinitions:
+        - AttributeName: bookingId
+          AttributeType: S
+        - AttributeName: email
+          AttributeType: S
+        - AttributeName: createdAt
+          AttributeType: S
+        - AttributeName: status
+          AttributeType: S
+        - AttributeName: startsAt
+          AttributeType: S
+      KeySchema:
+        - AttributeName: bookingId
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: EmailCreatedAtIndex
+          KeySchema:
+            - AttributeName: email
+              KeyType: HASH
+            - AttributeName: createdAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: StatusStartsAtIndex
+          KeySchema:
+            - AttributeName: status
+              KeyType: HASH
+            - AttributeName: startsAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+      Tags:
+        - Key: Application
+          Value: ai7lab-website
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: DataClassification
+          Value: customer-contact-data
+
+  WebsiteDataAccessPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: Least-privilege write access for the AI7Lab website runtime.
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: WriteWebsiteRecords
+            Effect: Allow
+            Action:
+              - dynamodb:PutItem
+              - dynamodb:UpdateItem
+            Resource:
+              - !GetAtt SubscribersTable.Arn
+              - !GetAtt ScheduledCallsTable.Arn
+
+Outputs:
+  Region:
+    Description: AWS region containing the website data tables.
+    Value: !Ref AWS::Region
+  SubscribersTableName:
+    Description: Set this value as AWS_DYNAMODB_SUBSCRIBERS_TABLE on Render.
+    Value: !Ref SubscribersTable
+  ScheduledCallsTableName:
+    Description: Set this value as AWS_DYNAMODB_BOOKINGS_TABLE on Render.
+    Value: !Ref ScheduledCallsTable
+  WebsiteDataAccessPolicyArn:
+    Description: Attach this policy to the restricted runtime identity used by Render.
+    Value: !Ref WebsiteDataAccessPolicy

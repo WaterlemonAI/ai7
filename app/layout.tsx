@@ -5,6 +5,8 @@ import Script from 'next/script'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { SmoothScroll } from '@/components/smooth-scroll'
+import { NewsletterPopup } from '@/components/newsletter-popup'
+import { SchedulerModal } from '@/components/scheduler'
 import { linkedInUrl, siteUrl } from '@/lib/site'
 import { defaultDescription } from '@/lib/seo'
 import './globals.css'
@@ -30,7 +32,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'AI7Lab — Sovereign AI, from Strategy to Production',
+    default: 'AI7Lab — Agentic AI Products Built for Real Work',
     template: '%s | AI7Lab',
   },
   description: defaultDescription,
@@ -38,27 +40,26 @@ export const metadata: Metadata = {
     'AI7Lab',
     'AI research lab',
     'enterprise AI',
-    'AI platform',
+    'agentic AI products',
     'Dubai AI',
     'UAE AI',
-    'sovereign AI infrastructure',
-    'AI compliance',
-    'private AI deployment',
-    'visual intelligence LLM',
-    'speech to speech AI',
+    'supplier intelligence',
+    'customer operations AI',
+    'enterprise AI solutions',
     'rolefield.ai',
   ],
-  generator: 'v0.app',
+  generator: 'Next.js',
   applicationName: 'AI7Lab',
   creator: 'AI7Lab',
   publisher: 'AI7Lab',
   category: 'technology',
   referrer: 'origin-when-cross-origin',
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
+  robots: process.env.NEXT_PUBLIC_DEPLOY_ENV === 'staging'
+    ? { index: false, follow: false, nocache: true }
+    : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
   openGraph: {
-    title: 'AI7Lab — Sovereign AI, from Strategy to Production',
-    description:
-      'AI7Lab helps enterprises and governments design, build, and operate customer-controlled AI environments. Strategy, compute, models, engineering, governance, and operations.',
+    title: 'AI7Lab — Agentic AI Products Built for Real Work',
+    description: defaultDescription,
     url: siteUrl,
     siteName: 'AI7Lab',
     locale: 'en_AE',
@@ -129,6 +130,8 @@ gtag('config', '${googleAnalyticsId}');`}
           <main className="min-h-screen">{children}</main>
           <Footer />
         </SmoothScroll>
+        <NewsletterPopup />
+        <SchedulerModal />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

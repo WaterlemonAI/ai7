@@ -5,8 +5,8 @@ import { editorialArticles, getPillarImage } from '@/lib/editorial'
 import { aiLibraryArticles } from '@/lib/ai-library'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/vision', '/products', '/partners', '/partners/builders', '/partners/enterprises', '/partners/technology-providers', '/platform', '/technology', '/insights', '/announcements', '/careers', '/contact']
-  const siteUpdatedAt = new Date('2026-08-26')
+  const routes = ['', '/vision', '/products', '/products/vendoreye', '/products/rolefield', '/enterprise-ai', '/partners', '/partners/builders', '/partners/enterprises', '/partners/technology-providers', '/platform', '/technology', '/technology/taed', '/insights', '/announcements', '/careers', '/contact']
+  const siteUpdatedAt = new Date('2026-10-13')
   return [
     ...routes.map((route) => ({ url: `${siteUrl}${route}`, lastModified: siteUpdatedAt, changeFrequency: route === '/announcements' || route === '/insights' ? 'weekly' as const : 'monthly' as const, priority: route === '' ? 1 : 0.8, ...(route === '' ? { images: [`${siteUrl}/opengraph-image`] } : {}) })),
     ...jobs.map((job) => ({ url: `${siteUrl}/careers/${job.slug}`, lastModified: new Date('2026-08-18'), changeFrequency: 'weekly' as const, priority: 0.9 })),

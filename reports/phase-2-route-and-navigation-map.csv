@@ -1,0 +1,23 @@
+route,navigation_label,page_role,status,primary_cta,seo_action
+/,Home,Company and portfolio entry,Rewrite in place,Discuss a problem,Preserve canonical
+/products,Products,Portfolio overview,Rewrite in place,Explore a product,Preserve canonical
+/products/vendoreye,Vendoreye,Principal product detail,Create,Explore Vendoreye,Add canonical and Product schema
+/products/rolefield,RoleField,Principal product detail,Create,Discuss customer operations,Add canonical and Product schema
+/enterprise-ai,Enterprise AI,Problem-to-production offer,Create,Discuss a problem,Add canonical and Service schema if appropriate
+/technology,Technology,Agentic AI architecture and principles,Rewrite in place,Explore the technology,Preserve canonical
+/technology/taed,Taed,Tool and capability showcase,Create,See how Taed works,Add canonical and SoftwareApplication or Product schema after validation
+/insights,Insights,Research and resource hub,Redesign in place,Explore a topic,Preserve canonical
+/vision,Company,Company purpose operating model and team,Rewrite in place,Work with AI7Lab,Preserve canonical and use Company nav label
+/careers,Careers,Talent,Retain and update,View open roles,Preserve canonical
+/contact,Contact,Qualified enquiry conversion,Rewrite in place,Submit enquiry,Preserve canonical
+/announcements,Announcements,Dated company history,Retain secondary,Read announcements,Preserve URLs and historical dates
+/partners,Partners,Legacy partnership hub,Retain outside primary nav,Discuss a partnership,Await analytics before consolidation
+/partners/builders,Builders,Legacy programme page,Retain outside primary nav,Discuss a partnership,Await programme confirmation
+/partners/enterprises,Enterprises,Legacy enterprise offer,Retain and link to /enterprise-ai,Explore Enterprise AI,Await analytics before redirect
+/partners/technology-providers,Technology providers,Legacy programme page,Retain outside primary nav,Discuss a partnership,Await programme confirmation
+/platform,Platform,Legacy sovereign AI overview,Retain outside primary nav,Explore technology,Await analytics before consolidation
+/insights/[slug],Applied guide,Existing search content,Retain and update contextual CTA,Contextual,Preserve URL
+/insights/research/[slug],Research article,Existing search content,Retain,Contextual,Preserve URL
+/insights/ai-in-x/[slug],Industry guide or resource,Existing search content,Retain and improve snippets,Contextual,Preserve URL
+/llms.txt,LLM index,Machine-readable discovery,Rewrite,Not applicable,Preserve endpoint
+/llms-full.txt,Full LLM context,Machine-readable discovery,Rewrite,Not applicable,Preserve endpoint

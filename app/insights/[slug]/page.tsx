@@ -1,4 +1,4 @@
-import { formatBrand } from '@/lib/brand-text'
+import { canonicalBrandText, formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,14 +19,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug)
   if (!post) return {}
   const image = `/insights/${slug}/opengraph-image`
+  const title = canonicalBrandText(post.title)
+  const description = canonicalBrandText(post.description)
   return {
-    title: post.title,
-    description: post.description,
-    keywords: [post.primaryKeyword, `${post.industry} AI`, blogProducts[post.product].name, 'enterprise AI', 'AI7Lab'],
+    title,
+    description,
+    keywords: [post.primaryKeyword, `${post.industry} AI`, blogProducts[post.product].name, 'enterprise AI', 'AI7Lab'].map(canonicalBrandText),
     authors: [{ name: 'AI7Lab Research & Product Team', url: siteUrl }],
     alternates: { canonical: `/insights/${slug}` },
-    openGraph: { title: post.title, description: post.description, url: `/insights/${slug}`, siteName: 'AI7Lab', locale: 'en_AE', type: 'article', publishedTime: post.publishedAt, modifiedTime: post.publishedAt, section: post.industry, tags: [post.primaryKeyword, post.industry, blogProducts[post.product].name], authors: ['AI7Lab'], images: [{ url: image, width: 1200, height: 630, alt: post.title }] },
-    twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [image] },
+    openGraph: { title, description, url: `/insights/${slug}`, siteName: 'AI7Lab', locale: 'en_AE', type: 'article', publishedTime: post.publishedAt, modifiedTime: post.publishedAt, section: post.industry, tags: [post.primaryKeyword, post.industry, blogProducts[post.product].name].map(canonicalBrandText), authors: ['AI7Lab'], images: [{ url: image, width: 1200, height: 630, alt: title }] },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   }
 }
 
@@ -41,7 +43,7 @@ export default async function InsightArticle({ params }: Props) {
   const published = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(post.publishedAt))
   const imageUrl = `${siteUrl}${hero.src}`
   const articleSchema = {
-    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title, description: post.description,
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: canonicalBrandText(post.title), description: canonicalBrandText(post.description),
     image: [imageUrl], datePublished: post.publishedAt, dateModified: post.publishedAt,
     author: { '@type': 'Organization', name: 'AI7Lab', url: siteUrl }, publisher: { '@type': 'Organization', name: 'AI7Lab', logo: { '@type': 'ImageObject', url: `${siteUrl}/ai7lab-logo.png` } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/insights/${post.slug}` }, about: [post.industry, product.name, post.primaryKeyword], inLanguage: 'en',
@@ -51,9 +53,9 @@ export default async function InsightArticle({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: canonicalBrandText(JSON.stringify(articleSchema)).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: canonicalBrandText(JSON.stringify(faqSchema)).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: canonicalBrandText(JSON.stringify(breadcrumbSchema)).replace(/</g, '\\u003c') }} />
       <header className="border-b border-border pt-32 sm:pt-36 md:pt-44">
         <div className="mx-auto max-w-5xl px-5 pb-12 sm:px-6 md:pb-16">
           <Link href="/insights" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"><ArrowLeft className="h-4 w-4" />All insights</Link>

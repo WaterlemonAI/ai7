@@ -55,7 +55,7 @@ export const vendorEyeResourcesByInsight: Record<string, ExternalResource[]> = {
   'logistics-carrier-supplier-monitoring-vendoreye': [vendorEyeGuides.monitoring, vendorEyeGuides.compliance, vendorEyeGuides.onboarding],
 }
 
-export function getVendorEyeGuideForTopic(topic: string): ExternalResource {
+export function getVendoreyeGuideForTopic(topic: string): ExternalResource {
   const value = topic.toLowerCase()
   if (/cyber|privacy|data protection|pdpl/.test(value)) return vendorEyeGuides.cybersecurity
   if (/construction|contractor|real estate/.test(value)) return vendorEyeGuides.construction

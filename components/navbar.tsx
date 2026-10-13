@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { nav } from '@/lib/site'
 import { Logo } from './logo'
-import { MagneticButton } from './magnetic-button'
 import { cn } from '@/lib/utils'
+import { SchedulerTrigger } from './scheduler'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -31,23 +31,23 @@ export function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
         pathname === '/'
-          ? 'border-b border-border/60 bg-background'
+          ? 'border-b border-border bg-background/95 backdrop-blur-xl'
           : scrolled
-          ? 'border-b border-border/60 bg-background/70 backdrop-blur-xl'
+          ? 'border-b border-border bg-background/90 backdrop-blur-xl'
           : 'border-b border-transparent bg-transparent',
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6">
         <Link href="/" className="flex items-center" aria-label="AI7Lab home">
-          <Logo className="h-[37px] w-auto" />
+          <Logo className="h-[42.55px] w-auto" />
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="border-b-2 border-transparent pb-2 text-[13px] font-medium text-muted-foreground transition-colors hover:border-primary hover:text-foreground aria-[current=page]:border-primary aria-[current=page]:text-foreground"
               aria-current={pathname === item.href || (item.href !== '/' && pathname.startsWith(`${item.href}/`)) ? 'page' : undefined}
             >
               {item.label}
@@ -56,22 +56,21 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <MagneticButton
-            href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+          <SchedulerTrigger
+            className="inline-flex min-h-11 items-center gap-3 rounded-none bg-primary px-5 py-2 text-[13px] font-semibold text-primary-foreground"
           >
-            Talk to Founder
+            Discuss a problem
             <ArrowUpRight className="h-4 w-4" />
-          </MagneticButton>
+          </SchedulerTrigger>
         </div>
 
         <button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-secondary lg:hidden"
+          className="inline-flex h-11 min-w-20 items-center justify-center gap-2 rounded-none text-foreground transition-colors hover:bg-secondary lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <><span className="text-sm">Close</span><X className="h-4 w-4" /></> : <><span className="text-sm">Menu</span><Menu className="h-4 w-4" /></>}
         </button>
       </div>
 
@@ -79,7 +78,7 @@ export function Navbar() {
         inert={!open}
         className={cn(
           'overflow-hidden border-t border-border/60 bg-background lg:hidden',
-          open ? 'max-h-[calc(100dvh-4rem)] overflow-y-auto' : 'max-h-0 border-t-0',
+          open ? 'max-h-[calc(100dvh-5rem)] overflow-y-auto' : 'max-h-0 border-t-0',
         )}
       >
         <nav className="flex flex-col gap-1 px-5 py-4 sm:px-6" aria-label="Mobile">
@@ -94,14 +93,13 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-2 inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
+          <SchedulerTrigger
+            onOpen={() => setOpen(false)}
+            className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-none bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
           >
-            Talk to Founder
+            Discuss a problem
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </SchedulerTrigger>
         </nav>
       </div>
     </header>

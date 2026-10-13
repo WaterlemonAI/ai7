@@ -5,7 +5,7 @@ Corporate website for AI7Lab, a research-led enterprise AI product company based
 ## Products
 
 - [Taed](https://taed.dev) — visual intelligence APIs
-- [VendorEye](https://vendoreye.ae) — supplier intelligence
+- [Vendoreye](https://vendoreye.ae) — supplier intelligence
 - [RoleField.ai](https://www.rolefield.ai) — multilingual AI workforce
 
 ## Local development

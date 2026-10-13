@@ -31,7 +31,7 @@ export const blogProducts: Record<BlogProduct, { name: string; href: string; log
     short: 'Visual intelligence APIs',
   },
   vendoreye: {
-    name: 'vendoreye',
+    name: 'Vendoreye',
     href: vendorEyeUrl,
     logo: '/logo-vendoreye.png',
     color: '#0f766e',

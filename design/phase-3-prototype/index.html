@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>AI7Lab — Phase 3 design prototype</title>
+    <meta
+      name="description"
+      content="A review-only interactive prototype for the AI7Lab website rehaul."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="route-wipe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="scroll-progress" aria-hidden="true"><i></i></div>
+
+    <aside class="review-bar" aria-label="Prototype review controls">
+      <div>
+        <span class="review-status">Phase 3 · review prototype</span>
+        <span class="review-note">AI7Lab blue / white direction</span>
+      </div>
+      <div class="review-actions">
+        <button class="text-button" id="motion-toggle" type="button" aria-pressed="false">
+          Reduce motion
+        </button>
+      </div>
+    </aside>
+
+    <header class="site-header">
+      <a class="brand" href="#home" data-route="home" aria-label="AI7Lab home">
+        <img src="../../public/ai7lab-logo.png" alt="AI7Lab" />
+      </a>
+      <button class="menu-button" id="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">
+        <span>Menu</span><span aria-hidden="true">↗</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#products" data-route="products">Products</a>
+        <a href="#enterprise-ai" data-route="enterprise-ai">Enterprise AI</a>
+        <a href="#technology" data-route="technology">Technology</a>
+        <a href="#insights" data-route="insights">Insights</a>
+        <a href="#company" data-route="company">Company</a>
+      </nav>
+      <a class="button button-small header-cta" href="#schedule" data-scheduler>Discuss a problem</a>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page is-active" data-page="home" aria-labelledby="home-title">
+        <div class="hero shell">
+          <div class="hero-copy reveal">
+            <p class="eyebrow"><span></span> Agentic AI · built for real work</p>
+            <h1 id="home-title">AI products built to <em>do the work.</em></h1>
+            <p class="lede">
+              AI7Lab builds and scales agentic AI products, then applies the same product discipline
+              to help leading organisations reduce cost, improve efficiency, and create new operational capability.
+            </p>
+            <div class="button-row">
+              <a class="button" href="#schedule" data-scheduler>Discuss a problem <span>↗</span></a>
+              <a class="button button-quiet" href="#products" data-route="products">Explore our products</a>
+            </div>
+          </div>
+          <div class="system-visual evidence-visual reveal" aria-label="Animated operating evidence from Vendoreye and RoleField">
+            <div class="evidence-head"><span>LIVE OPERATING EVIDENCE</span><i>AI7 PRODUCT NETWORK</i></div>
+            <div class="evidence-boundary" aria-hidden="true"></div>
+            <div class="product-source source-vendoreye">
+              <img src="../../public/logo-vendoreye.png" alt="" />
+              <span>SUPPLIER<br />INTELLIGENCE</span>
+            </div>
+            <div class="product-source source-rolefield">
+              <img src="../../public/logo-rolefield.png" alt="" />
+              <span>CUSTOMER<br />OPERATIONS</span>
+            </div>
+            <div class="evidence-engine" aria-hidden="true">
+              <i></i><i></i>
+              <img src="../../public/ai7lab-logo.png" alt="" />
+            </div>
+            <div class="evidence-flow" aria-hidden="true"><i></i></div>
+            <div class="metric-stage">
+              <section class="metric-sequence vendor-sequence">
+                <small>Vendoreye / network</small>
+                <strong>134,000+</strong>
+                <span>registered vendors</span>
+                <div class="rolefield-mini"><b>20+<em>large scale buyers</em></b><b>8,000+<em>tenders published</em></b></div>
+              </section>
+              <section class="metric-sequence rolefield-sequence">
+                <small>ROLEFIELD / OPERATIONS</small>
+                <strong>60M+</strong>
+                <span>calls completed</span>
+                <div class="rolefield-mini"><b>~10M<em>calls / month</em></b><b>$1M+<em>reported savings</em></b></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <section class="proof shell section" aria-labelledby="proof-title">
+          <div class="section-heading reveal">
+            <p class="kicker">Operating evidence</p>
+            <h2 id="proof-title">Built in the lab.<br />Proven in operations.</h2>
+          </div>
+          <div class="product-proof-grid">
+            <article class="product-proof-card vendoreye-proof reveal">
+              <header class="proof-card-header">
+                <img src="../../public/logo-vendoreye.png" alt="Vendoreye" />
+                <span>Supplier intelligence</span>
+              </header>
+              <div class="proof-metrics vendoreye-metrics">
+                <div class="proof-stat">
+                  <strong data-counter="134000" data-suffix="+">134,000+</strong>
+                  <p>registered vendors</p>
+                </div>
+                <div class="proof-stat">
+                  <strong data-counter="20" data-suffix="+">20+</strong>
+                  <p>large scale buyers</p>
+                </div>
+                <div class="proof-stat">
+                  <strong data-counter="8000" data-suffix="+">8,000+</strong>
+                  <p>tenders published</p>
+                </div>
+              </div>
+              <a href="#vendoreye" data-route="vendoreye">Explore Vendoreye <span>↗</span></a>
+            </article>
+            <article class="product-proof-card rolefield-proof reveal">
+              <header class="proof-card-header">
+                <img src="../../public/logo-rolefield.png" alt="RoleField" />
+                <span>Customer operations AI</span>
+              </header>
+              <div class="proof-metrics rolefield-metrics">
+                <div class="proof-stat">
+                  <strong data-counter="60" data-suffix="M+">60M+</strong>
+                  <p>calls completed across customer operations</p>
+                </div>
+                <div class="proof-stat">
+                  <strong data-counter="10" data-prefix="~" data-suffix="M">~10M</strong>
+                  <p>calls handled each month</p>
+                </div>
+                <div class="proof-stat proof-stat-wide">
+                  <strong data-counter="1" data-prefix="$" data-suffix="M+">$1M+</strong>
+                  <p>in reported customer savings</p>
+                </div>
+              </div>
+              <a href="#rolefield" data-route="rolefield">Explore RoleField <span>↗</span></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="partners shell reveal" aria-labelledby="partners-title">
+          <div class="partners-intro">
+            <p class="kicker">Partners</p>
+            <h2 id="partners-title">Building alongside teams<br />shaping trusted AI.</h2>
+          </div>
+          <div class="partner-logos" aria-label="AI7Lab partners">
+            <a href="https://www.signzy.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Signzy">
+              <img src="../../public/logo-signzy.svg" alt="Signzy" />
+              <span>Identity, compliance and trust infrastructure</span>
+            </a>
+            <a href="https://www.rzolut.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit RZOLUT">
+              <img src="../../public/logo-rzolut.svg" alt="RZOLUT" />
+              <span>Risk and compliance intelligence</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="products-section section shell" aria-labelledby="products-title">
+          <div class="section-heading split-heading reveal">
+            <div><p class="kicker">Products</p><h2 id="products-title">Purpose-built<br />intelligence.</h2></div>
+            <p>Two products, each focused on a high-value operational problem and designed to get better through real use.</p>
+          </div>
+          <article class="product-panel vendor-panel reveal">
+            <div class="product-copy">
+              <p class="panel-index">01 / SUPPLIER INTELLIGENCE</p>
+              <img src="../../public/logo-vendoreye.png" alt="Vendoreye" />
+              <h3>See the vendor.<br />Find the opportunity.</h3>
+              <p>Bring supplier discovery, qualification, evidence and opportunity intelligence into one continuously useful record.</p>
+              <a href="#vendoreye" data-route="vendoreye">Explore Vendoreye <span>↗</span></a>
+            </div>
+            <div class="vendor-demo" aria-hidden="true">
+              <div class="demo-search">Search 134,000+ registered vendors <b>⌘ K</b></div>
+              <div class="vendor-row active"><span>01</span><b>Advanced logistics</b><em>96%</em></div>
+              <div class="vendor-row"><span>02</span><b>Industrial systems</b><em>91%</em></div>
+              <div class="vendor-row"><span>03</span><b>Specialist services</b><em>87%</em></div>
+              <div class="demo-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </article>
+          <article class="product-panel role-panel reveal">
+            <div class="product-copy">
+              <p class="panel-index">02 / CUSTOMER OPERATIONS AI</p>
+              <img src="../../public/logo-rolefield.png" alt="RoleField" />
+              <h3>Run every customer<br />interaction.</h3>
+              <p>One operating layer for support, calling and call-centre operations, with in-person kiosk AI through Seer.</p>
+              <ul class="capability-line" aria-label="RoleField capabilities">
+                <li>Support</li><li>Calling</li><li>Call centre</li><li>Seer kiosk</li>
+              </ul>
+              <a href="#rolefield" data-route="rolefield">Explore RoleField <span>↗</span></a>
+            </div>
+            <div class="call-demo" aria-hidden="true">
+              <div class="call-top"><span class="live-dot"></span> LIVE CUSTOMER OPERATION <b>03:42</b></div>
+              <div class="waveform">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="call-step done"><span>01</span><b>Request understood</b><em>DONE</em></div>
+              <div class="call-step done"><span>02</span><b>Operation routed</b><em>DONE</em></div>
+              <div class="call-step"><span>03</span><b>Outcome completed</b><em>RUNNING</em></div>
+              <p>SUPPORT · CALLS · CALL CENTRE · KIOSK</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="enterprise section">
+          <div class="shell enterprise-grid">
+            <div class="enterprise-copy reveal">
+              <p class="kicker">Enterprise AI</p>
+              <h2>Start with the business problem.<br />Build the AI around it.</h2>
+              <p>We work with leading organisations to find the workflows where AI can create measurable value, then build the system needed to operate reliably.</p>
+              <a class="button button-invert" href="#enterprise-ai" data-route="enterprise-ai">How we work <span>↗</span></a>
+            </div>
+            <ol class="process reveal">
+              <li><span>01</span><div><b>Frame</b><p>Define the problem, owner and measurable baseline.</p></div></li>
+              <li><span>02</span><div><b>Prove</b><p>Validate the valuable workflow with representative data.</p></div></li>
+              <li><span>03</span><div><b>Integrate</b><p>Connect systems, controls, actions and human authority.</p></div></li>
+              <li><span>04</span><div><b>Operate + improve</b><p>Measure outcomes and evolve the product over time.</p></div></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="principles section shell reveal" aria-labelledby="principles-title">
+          <p class="kicker">Designed to evolve</p>
+          <h2 id="principles-title">Future-ready is an architecture,<br />not a promise.</h2>
+          <div class="principle-grid">
+            <article><span>01</span><h3>Replaceable</h3><p>Models and components can evolve behind stable interfaces.</p></article>
+            <article><span>02</span><h3>Observable</h3><p>Quality, cost, latency and outcomes stay visible in operation.</p></article>
+            <article><span>03</span><h3>Controlled</h3><p>Policies, approvals and human escalation are part of the system.</p></article>
+            <article><span>04</span><h3>Versioned</h3><p>Prompts, schemas and workflows change with evidence and traceability.</p></article>
+          </div>
+        </section>
+
+        <aside class="lab-note shell reveal" aria-labelledby="taed-title">
+          <div class="lab-note-identity">
+            <p class="kicker">From the lab</p>
+            <img src="../../public/logo-taed.png" alt="Taed" />
+          </div>
+          <div class="lab-note-copy">
+            <h2 id="taed-title">Structured intelligence from unstructured media.</h2>
+            <p>Taed is an AI7Lab-built tool for turning documents, images, video, and audio into schema-controlled outputs.</p>
+          </div>
+          <div class="lab-note-action">
+            <small>1,000+ API calls/day</small>
+            <a href="#taed" data-route="taed">View the technology note <span>↗</span></a>
+          </div>
+        </aside>
+
+        <section class="closing section">
+          <div class="shell reveal">
+            <p class="kicker">What should work better?</p>
+            <h2>Bring us the problem<br />worth solving.</h2>
+            <a class="button button-light" href="#schedule" data-scheduler>Discuss a problem <span>↗</span></a>
+          </div>
+        </section>
+      </section>
+
+      <section class="page inner-page" data-page="products" aria-labelledby="products-page-title">
+        <div class="inner-hero shell"><p class="eyebrow"><span></span> Portfolio</p><h1 id="products-page-title">Products built around<br /><em>valuable work.</em></h1><p class="lede">Focused AI products for supplier intelligence and end-to-end customer operations, supported by tools born inside the lab.</p></div>
+        <div class="shell route-cards">
+          <a class="route-card" href="#vendoreye" data-route="vendoreye"><span>01 / PRODUCT</span><img src="../../public/logo-vendoreye.png" alt="Vendoreye" /><h2>Supplier and opportunity intelligence.</h2><p>Discover, verify, qualify and monitor vendors in one useful record.</p><div class="route-card-metrics vendoreye-card-metrics"><span><strong>134,000+</strong><small>registered vendors</small></span><span><strong>20+</strong><small>large scale buyers</small></span><span><strong>8,000+</strong><small>tenders published</small></span></div><b>Explore Vendoreye ↗</b></a>
+          <a class="route-card dark-card" href="#rolefield" data-route="rolefield"><span>02 / PRODUCT · CUSTOMER OPERATIONS AI</span><img src="../../public/logo-rolefield.png" alt="RoleField" /><h2>Customer operations, from call centre to kiosk.</h2><p>Support, calling and call-centre operations, plus in-person AI through Seer.</p><div class="route-card-metrics rolefield-card-metrics"><span><strong>60M+</strong><small>calls completed</small></span><span><strong>~10M</strong><small>calls / month</small></span><span><strong>$1M+</strong><small>reported savings</small></span></div><b>Explore RoleField ↗</b></a>
+          <a class="route-card tool-card" href="#taed" data-route="taed"><span>BUILT BY THE LAB / TOOL</span><img src="../../public/logo-taed.png" alt="Taed" /><h2>Structured intelligence from unstructured media.</h2><p>A reusable visual and document intelligence capability.</p><b>Explore Taed ↗</b></a>
+        </div>
+      </section>
+
+      <section class="page inner-page" data-page="vendoreye" aria-labelledby="vendoreye-title">
+        <div class="inner-hero product-hero vendor-hero shell"><p class="eyebrow"><span></span> AI7Lab product · Vendoreye</p><img src="../../public/logo-vendoreye.png" alt="Vendoreye" /><h1 id="vendoreye-title">See the vendor.<br /><em>Find the opportunity.</em></h1><p class="lede">Supplier discovery, evidence, qualification, monitoring and opportunity intelligence in one continuously useful vendor record.</p><a class="button" href="#schedule" data-scheduler data-interest="Vendoreye">Discuss supplier intelligence ↗</a></div>
+        <div class="shell stat-band vendoreye-stat-band"><div><b>134,000+</b><span>registered vendors</span></div><div><b>20+</b><span>large scale buyers</span></div><div><b>8,000+</b><span>tenders published</span></div></div>
+        <div class="shell workflow"><p class="kicker">Working model</p><h2>From fragmented information to an evidence-backed next step.</h2><ol><li><span>01</span><b>Discover</b><p>Find relevant suppliers and opportunities.</p></li><li><span>02</span><b>Verify</b><p>Connect claims to source evidence.</p></li><li><span>03</span><b>Qualify</b><p>Assess fit against business criteria.</p></li><li><span>04</span><b>Monitor + act</b><p>Keep the record current and useful.</p></li></ol></div>
+      </section>
+
+      <section class="page inner-page rolefield-page" data-page="rolefield" aria-labelledby="rolefield-title">
+        <div class="inner-hero product-hero shell"><p class="eyebrow"><span></span> AI7Lab product · RoleField</p><img src="../../public/logo-rolefield.png" alt="RoleField" /><h1 id="rolefield-title">The operating layer for<br /><em>every customer interaction.</em></h1><p class="lede">RoleField brings customer support, calling and call-centre operations into one AI system, then extends the experience into physical spaces through Seer kiosk AI.</p><a class="button" href="#schedule" data-scheduler data-interest="RoleField">Discuss customer operations ↗</a></div>
+        <div class="shell stat-band inverse"><div><b>60M+</b><span>calls completed</span></div><div><b>~10M</b><span>calls / month</span></div><div><b>$1M+</b><span>reported savings</span></div></div>
+        <section class="shell rolefield-suite" aria-labelledby="rolefield-suite-title">
+          <div class="section-heading split-heading reveal">
+            <div><p class="kicker">One operating platform</p><h2 id="rolefield-suite-title">Four surfaces.<br />One customer operation.</h2></div>
+            <p>RoleField is designed around the whole service operation—how customers enter, how work is routed, how outcomes are completed, and where people take control.</p>
+          </div>
+          <div class="suite-grid reveal">
+            <article><span>01</span><h3>Support operations</h3><p>Run AI-assisted customer conversations with operating context, approved knowledge and a route to resolution.</p></article>
+            <article><span>02</span><h3>Calling operations</h3><p>Handle inbound and outbound calling at scale, with multilingual conversations connected to the work behind each call.</p></article>
+            <article><span>03</span><h3>Call-centre operations</h3><p>Coordinate conversations, queues, actions, system updates and human handoffs across the wider service operation.</p></article>
+            <article><span>04</span><h3>Seer kiosk AI</h3><p>Bring the same operational intelligence into physical customer environments through a context-aware AI interface.</p></article>
+          </div>
+        </section>
+        <section class="seer-showcase shell reveal" aria-labelledby="seer-title">
+          <div class="seer-copy">
+            <p class="kicker">RoleField · Seer</p>
+            <h2 id="seer-title">An AI front desk that can recognise context.</h2>
+            <p>Seer is RoleField's kiosk AI experience for approved physical environments. It can recognise enrolled visitors, retrieve relevant profile context, start a device-trained conversation, retain interaction history, and capture supported documents.</p>
+            <ul>
+              <li>Approved-person recognition and contextual profiles</li>
+              <li>Device-specific conversational behaviour</li>
+              <li>Returning-visitor and conversation continuity</li>
+              <li>Business-card, Emirates ID and passport capture modes</li>
+              <li>Animated avatar interfaces for kiosk experiences</li>
+            </ul>
+          </div>
+          <div class="seer-console" aria-label="Illustrative Seer kiosk interaction">
+            <div class="seer-console-head"><span><i></i> SEER / KIOSK 07</span><b>READY</b></div>
+            <div class="seer-scan"><div class="seer-face"><span></span><i></i><i></i><i></i><i></i></div><small>CONTEXT MATCH</small><strong>Returning visitor</strong><p>Profile context available · conversation ready</p></div>
+            <div class="seer-console-row"><span>01</span><b>Recognise</b><em>COMPLETE</em></div>
+            <div class="seer-console-row"><span>02</span><b>Open context</b><em>COMPLETE</em></div>
+            <div class="seer-console-row active"><span>03</span><b>Continue service</b><em>ACTIVE</em></div>
+          </div>
+        </section>
+        <div class="shell workflow inverse"><p class="kicker">Operational loop</p><h2>Engage. Route. Resolve. Improve.</h2><ol><li><span>01</span><b>Engage</b><p>Meet the customer through calls, support or a Seer kiosk.</p></li><li><span>02</span><b>Route</b><p>Connect intent and context to the right workflow.</p></li><li><span>03</span><b>Resolve</b><p>Complete approved actions or bring in a person.</p></li><li><span>04</span><b>Improve</b><p>Use operational evidence to strengthen the next interaction.</p></li></ol></div>
+      </section>
+
+      <section class="page inner-page" data-page="enterprise-ai" aria-labelledby="enterprise-title">
+        <div class="inner-hero shell"><p class="eyebrow"><span></span> Enterprise AI</p><h1 id="enterprise-title">Start with the business problem.<br /><em>Build the AI around it.</em></h1><p class="lede">A product-led route from a measurable operational problem to a controlled AI system that works in practice.</p><a class="button" href="#schedule" data-scheduler data-interest="Enterprise AI">Discuss a problem ↗</a></div>
+        <div class="shell fit-grid"><div><p class="kicker">A strong starting point</p><h2>The work has an owner, a baseline and a route to action.</h2></div><ul><li>A named workflow and accountable owner</li><li>A measurable baseline or desired outcome</li><li>Representative data and access to users</li><li>A credible integration and operating path</li></ul></div>
+        <div class="shell workflow"><p class="kicker">How we work</p><ol><li><span>01</span><b>Frame</b><p>Problem, owner and baseline.</p></li><li><span>02</span><b>Prove</b><p>Valuable workflow and evidence.</p></li><li><span>03</span><b>Integrate</b><p>Systems, controls and people.</p></li><li><span>04</span><b>Operate</b><p>Outcomes, monitoring and improvement.</p></li></ol></div>
+      </section>
+
+      <section class="page inner-page" data-page="technology" aria-labelledby="technology-title">
+        <div class="inner-hero shell"><p class="eyebrow"><span></span> Technology</p><h1 id="technology-title">AI systems<br /><em>designed to evolve.</em></h1><p class="lede">Stable interfaces, replaceable components, monitored outcomes and clear human authority—from context to useful action.</p></div>
+        <div class="shell architecture" aria-label="Context to action architecture"><div>Inputs<small>Voice · data · media</small></div><i>→</i><div>Intelligence<small>Models · retrieval · state</small></div><i>→</i><div>Actions<small>Tools · systems · people</small></div><i>→</i><div>Evidence<small>Quality · cost · outcomes</small></div></div>
+        <div class="shell principle-grid standalone"><article><span>01</span><h3>Agentic workflows</h3><p>State, tools and permissions around the model.</p></article><article><span>02</span><h3>Controlled action</h3><p>Policies, approvals and escalation paths.</p></article><article><span>03</span><h3>Continuous evaluation</h3><p>Quality and outcome measurement in operation.</p></article><article><span>04</span><h3>Replaceable parts</h3><p>New capabilities without rebuilding the system.</p></article></div>
+      </section>
+
+      <section class="page inner-page taed-page" data-page="taed" aria-labelledby="taed-page-title">
+        <div class="inner-hero product-hero shell"><p class="eyebrow"><span></span> Built by AI7Lab · Taed</p><img src="../../public/logo-taed.png" alt="Taed" /><h1 id="taed-page-title">Turn unstructured media into<br /><em>structured intelligence.</em></h1><p class="lede">Documents, images, video and audio become reliable, schema-controlled outputs for downstream workflows.</p><a class="button" href="#schedule" data-scheduler data-interest="General business problem">Discuss document intelligence ↗</a></div>
+        <div class="shell architecture taed-flow"><div>Source<small>PDF · IMG · VID · WAV</small></div><i>→</i><div>Extract<small>Classify · parse · understand</small></div><i>→</i><div>Control<small>Schema · validate · review</small></div><i>→</i><div>Deliver<small>Versioned monitored API</small></div></div>
+        <div class="shell stat-band"><div><b>1,000+</b><span>API calls / day</span></div></div>
+      </section>
+
+      <section class="page inner-page" data-page="insights" aria-labelledby="insights-title">
+        <div class="inner-hero shell"><p class="eyebrow"><span></span> Insights</p><h1 id="insights-title">Research for AI<br /><em>that has to work.</em></h1><p class="lede">Existing articles and resources stay at their current URLs, reorganised around useful paths into products, technology and industries.</p></div>
+        <div class="shell filter-row" aria-label="Illustrative filters"><button class="active" type="button">All</button><button type="button">Agentic AI</button><button type="button">Voice</button><button type="button">Supplier intelligence</button><button type="button">Document AI</button><button type="button">Production</button></div>
+        <div class="shell insight-grid"><article><span>GUIDE · AGENTIC AI</span><h2>From model output to controlled action</h2><p>What changes when an AI system can use tools and complete workflow steps.</p></article><article><span>RESEARCH · VOICE</span><h2>Measuring a voice agent beyond containment</h2><p>How workflow outcomes reveal more than call-level automation metrics.</p></article><article><span>PLAYBOOK · PRODUCTION</span><h2>Designing AI components to be replaceable</h2><p>A practical approach to interfaces, evaluations and migration.</p></article></div>
+      </section>
+
+      <section class="page inner-page" data-page="company" aria-labelledby="company-title">
+        <div class="inner-hero shell"><p class="eyebrow"><span></span> Company</p><h1 id="company-title">We keep looking for the next<br /><em>valuable problem.</em></h1><p class="lede">AI7Lab is a Dubai-based product company building agentic AI systems and working with organisations to turn difficult operations into useful products.</p></div>
+        <div class="shell manifesto"><p>Find the valuable problem.</p><p>Build the smallest system that proves it.</p><p>Measure the operational result.</p><p>Keep improving what works.</p></div>
+      </section>
+
+      <section class="page inner-page contact-page" data-page="contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div class="inner-hero"><p class="eyebrow"><span></span> Discuss a problem</p><h1 id="contact-title">What should<br /><em>work better?</em></h1><p class="lede">Tell us about the workflow, its owner and the result that matters. This prototype does not submit data.</p></div>
+          <form id="prototype-form">
+            <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+            <label>Work email<input type="email" name="email" autocomplete="email" required /></label>
+            <label>Organisation<input type="text" name="organisation" autocomplete="organization" required /></label>
+            <label>Relevant area<select name="area"><option>Choose one</option><option>Vendoreye</option><option>RoleField</option><option>Enterprise AI</option><option>Taed</option><option>Partnership</option></select></label>
+            <label class="full">What problem are you trying to solve?<textarea name="problem" rows="5" required></textarea></label>
+            <button class="button full" type="submit">Preview submission state ↗</button>
+            <p class="form-note" id="form-note" role="status">Review-only form · no information is sent.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-grid">
+        <div><img src="../../public/ai7lab-logo.png" alt="AI7Lab" /><p>Agentic AI products and enterprise solutions, built in Dubai.</p></div>
+        <div><b>Explore</b><a href="#products" data-route="products">Products</a><a href="#enterprise-ai" data-route="enterprise-ai">Enterprise AI</a><a href="#technology" data-route="technology">Technology</a></div>
+        <div><b>Products</b><a href="#vendoreye" data-route="vendoreye">Vendoreye</a><a href="#rolefield" data-route="rolefield">RoleField</a><a href="#taed" data-route="taed">Taed</a></div>
+        <div><b>Company</b><a href="#insights" data-route="insights">Insights</a><a href="#company" data-route="company">Company</a><a href="#contact" data-route="contact">Contact</a></div>
+      </div>
+      <div class="shell footer-bottom"><span>© 2026 AI7Lab · Design prototype</span><span>Dubai, UAE</span></div>
+    </footer>
+
+    <div class="newsletter-overlay" id="newsletter-overlay" hidden>
+      <section class="newsletter-dialog" role="dialog" aria-modal="true" aria-labelledby="newsletter-title" aria-describedby="newsletter-description">
+        <button class="newsletter-close" id="newsletter-close" type="button" aria-label="Close newsletter signup">×</button>
+        <p class="newsletter-eyebrow">AI7Lab / Signal, not noise</p>
+        <h2 id="newsletter-title">Choose what reaches your inbox.</h2>
+        <p id="newsletter-description">A focused dispatch from the lab. Select only the signals useful to you.</p>
+        <form id="newsletter-form">
+          <label class="newsletter-email">Work email<input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required /></label>
+          <fieldset><legend>Topics</legend><div class="newsletter-topics">
+            <label><input type="checkbox" name="topics" value="AI News" /><span>AI News</span></label>
+            <label><input type="checkbox" name="topics" value="Product Insights" checked /><span>Product Insights</span></label>
+            <label><input type="checkbox" name="topics" value="Releases" /><span>Releases</span></label>
+          </div></fieldset>
+          <p class="newsletter-error" id="newsletter-error" role="alert"></p>
+          <button class="newsletter-submit" type="submit">Preview subscription <span>↗</span></button>
+          <small>Prototype only · no information is sent.</small>
+        </form>
+      </section>
+    </div>
+
+    <div class="scheduler-overlay" id="scheduler-overlay" hidden>
+      <section class="scheduler-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduler-title" aria-describedby="scheduler-description">
+        <button class="scheduler-close" id="scheduler-close" type="button" aria-label="Close scheduler">×</button>
+        <div id="scheduler-form-view">
+          <p class="scheduler-eyebrow">AI7Lab / Schedule a conversation</p>
+          <h2 id="scheduler-title">Pick a time that works.</h2>
+          <p id="scheduler-description">Thirty-minute conversations, Monday to Friday, 9:00 AM–5:00 PM Gulf Standard Time. Your selected time is also shown in your timezone.</p>
+          <form id="scheduler-form">
+            <div class="scheduler-grid"><label>Your name<input id="scheduler-name" name="name" autocomplete="name" required /></label><label>Work email<input name="email" type="email" autocomplete="email" required /></label><label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971 50 123 4567" required /></label><label>Organisation<input name="organisation" autocomplete="organization" required /></label></div>
+            <label>Conversation<select id="scheduler-interest" name="interest"><option>General business problem</option><option>Vendoreye</option><option>RoleField</option><option>Enterprise AI</option><option>Partnership</option></select></label>
+            <div class="scheduler-slots"><label>Date<input id="scheduler-date" name="date" type="date" required /></label><label>Time in UAE<select id="scheduler-time" name="time"></select></label></div>
+            <p class="scheduler-timezone" id="scheduler-timezone"></p>
+            <div class="scheduler-grid"><label>Preferred language<select name="language"><option>English</option><option>Arabic</option></select></label><label>Other attendees <small>Optional, comma-separated</small><input name="attendees" placeholder="colleague@company.com" /></label></div>
+            <label>What should work better? <small>Optional</small><textarea name="notes" rows="3" placeholder="Give the team enough context to prepare."></textarea></label>
+            <p class="scheduler-error" id="scheduler-error" role="alert"></p>
+            <button class="scheduler-submit" type="submit">Preview confirmation <span>↗</span></button>
+            <small class="scheduler-disclosure">Prototype only · no invitation is sent. Production uses SMTP and routes the invite to the relevant AI7Lab audience.</small>
+          </form>
+        </div>
+        <div class="scheduler-success" id="scheduler-success" hidden><span>✓</span><p class="scheduler-eyebrow">Booking state verified</p><h2>Your time is reserved.</h2><p>In production, the visitor receives a branded thank-you email and a separate calendar invitation. This prototype sends neither.</p><button class="button" id="scheduler-done" type="button">Close</button></div>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

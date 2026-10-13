@@ -1,4 +1,4 @@
-import { formatBrand } from '@/lib/brand-text'
+import { canonicalBrandText, formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -12,9 +12,10 @@ export function generateStaticParams() { return aiLibraryArticles.map(({ slug })
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getAiLibraryArticle((await params).slug)
   if (!article) return {}
-  const description = `${article.title}: practical UAE and GCC guidance covering ${article.topics.join(', ')}.`
+  const title = canonicalBrandText(article.title)
+  const description = canonicalBrandText(`${article.title}: practical UAE and GCC guidance covering ${article.topics.join(', ')}.`)
   const path = `/insights/ai-in-x/${article.slug}`
-  return { title: article.title, description, keywords: [article.title, `AI in ${article.cluster}`, 'enterprise AI UAE', ...article.topics], alternates:{ canonical:path }, openGraph:{ type:'article', locale:'en_AE', siteName:'AI7Lab', url:path, title:article.title, description, publishedTime:'2026-08-28', modifiedTime:'2026-08-28' }, twitter:{ card:'summary_large_image', title:article.title, description } }
+  return { title, description, keywords: [title, `AI in ${article.cluster}`, 'enterprise AI UAE', ...article.topics].map(canonicalBrandText), alternates:{ canonical:path }, openGraph:{ type:'article', locale:'en_AE', siteName:'AI7Lab', url:path, title, description, publishedTime:'2026-08-28', modifiedTime:'2026-08-28' }, twitter:{ card:'summary_large_image', title, description } }
 }
 
 export default async function AiLibraryPage({ params }: Props) {
@@ -28,7 +29,7 @@ export default async function AiLibraryPage({ params }: Props) {
   const url = `${siteUrl}/insights/ai-in-x/${article.slug}`
   const schema = { '@context':'https://schema.org', '@type':'Article', headline:article.title, description, datePublished:'2026-08-28', dateModified:'2026-08-28', author:{'@type':'Organization',name:'AI7Lab'}, publisher:{'@type':'Organization',name:'AI7Lab'}, mainEntityOfPage:url, about:[article.cluster,...article.topics], inLanguage:'en-AE' }
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:canonicalBrandText(JSON.stringify(schema)).replace(/</g,'\\u003c')}} />
     <header className="border-b border-border bg-grid pt-32 sm:pt-36 md:pt-44"><div className="mx-auto max-w-5xl px-5 pb-16 sm:px-6 md:pb-20">
       <Link href="/insights#ai-in-x-library" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"><ArrowLeft className="h-4 w-4"/>AI in X library</Link>
       <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-muted-foreground"><span className="rounded-full bg-blue-50 px-3 py-1 font-medium text-primary">{formatBrand(article.cluster)}</span><span>Library {formatBrand(String(article.number).padStart(2,'0'))}</span><span>·</span><span>{formatBrand(article.type)}</span></div>

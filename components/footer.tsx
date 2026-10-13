@@ -8,14 +8,14 @@ const columns = [
     title: 'Company',
     links: [
       { label: 'Vision', href: '/vision' },
-      { label: 'Platform', href: '/platform' },
+      { label: 'Enterprise AI', href: '/enterprise-ai' },
       { label: 'Technology', href: '/technology' },
       { label: 'Contact', href: '/contact' },
     ],
   },
   {
     title: 'Products',
-    links: products.slice(0, 4).map((p) => ({ label: p.name, href: `/products#${p.slug}` })),
+    links: products.map((p) => ({ label: p.name, href: p.slug === 'taed' ? '/technology/taed' : `/products/${p.slug}` })),
   },
   {
     title: 'Resources',
@@ -30,7 +30,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-card/40">
+    <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="sm:col-span-2 md:col-span-1">
@@ -38,7 +38,7 @@ export function Footer() {
               <Logo className="h-[50px] w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              From strategy and private compute to models, engineering, governance, and operations. AI7Lab helps enterprises and governments build AI they control.
+              Agentic AI products and enterprise solutions, built in Dubai for real operational work.
             </p>
           </div>
 

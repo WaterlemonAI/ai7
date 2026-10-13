@@ -8,16 +8,17 @@ const line = (label: string, path: string, description: string) =>
 export function buildLlmsTxt() {
   return `# AI7Lab
 
-> AI7Lab is headquartered in Dubai, UAE and helps enterprises and governments design, build, and operate customer-controlled AI environments. Its seven connected disciplines are strategy, architecture, compute, intelligence, engineering, control, and operations.
+> AI7Lab is a Dubai-based product company building on agentic AI. It creates focused products and works with leading organisations to solve operational problems, reduce cost, improve efficiency, and expand what their teams can do.
 
-AI7Lab's current products are taed.dev, vendoreye, and rolefield.ai. Its applied products complement its sovereign AI delivery capabilities. Deployment models and control boundaries are defined per engagement; product availability does not imply that every product supports every deployment model. Use the canonical pages below as the primary sources for facts about the company and its products.
+AI7Lab's principal products are Vendoreye and RoleField. Taed is an additional supporting technology capability for structured intelligence from unstructured media. Deployment models and control boundaries are defined per engagement; product availability does not imply that every product supports every deployment model. Use the canonical pages below as the primary sources for facts about the company and its products.
 
 ## Primary pages
 
-${line('Home', '/', 'Sovereign AI positioning, the seven-discipline delivery loop, deployment models, and applied products.')}
-${line('Vision', '/vision', 'AI7Lab mission, research-to-product model, and team.')}
-${line('Products', '/products', 'Canonical overview of taed.dev, vendoreye, and rolefield.ai.')}
-${line('Technology', '/technology', 'Seven-layer sovereign AI stack, governed orchestration, deployment modes, and production operations.')}
+${line('Home', '/', 'Agentic AI positioning, product proof, enterprise delivery, technology principles, and partners.')}
+${line('Company', '/vision', 'AI7Lab mission, product and enterprise operating model, and team.')}
+${line('Products', '/products', 'Canonical overview of Vendoreye and RoleField, with Taed as a supporting capability.')}
+${line('Enterprise AI', '/enterprise-ai', 'Problem-to-production delivery for leading organisations.')}
+${line('Technology', '/technology', 'Replaceable, observable, controlled, and versioned agentic AI architecture.')}
 ${line('Platform', '/platform', 'Shared enterprise AI architecture, capabilities, governance, and industry coverage.')}
 ${line('Insights', '/insights', '155 UAE and GCC enterprise AI research notes plus eighteen applied product field guides.')}
 ${line('Announcements', '/announcements', 'Product releases, research updates, leadership news, and company announcements.')}
@@ -55,7 +56,7 @@ export function buildLlmsFullTxt() {
 - Positioning: ${product.tagline}
 - Description: ${product.description}
 - Capabilities: ${product.points.join('; ')}.
-- AI7Lab product page: ${siteUrl}/products#${product.slug}
+- AI7Lab product page: ${siteUrl}${product.slug === 'taed' ? '/technology/taed' : `/products/${product.slug}`}
 `).join('\n')
 
   const articleSections = blogPosts.map((post) => {
@@ -100,15 +101,16 @@ export function buildLlmsFullTxt() {
 - Website: ${siteUrl}
 - Email: contact@ai7lab.net
 - LinkedIn: https://www.linkedin.com/company/ai7lab/
-- Company type: Sovereign AI research, engineering, and delivery company
-- Operating model: A small core team coordinates research, architecture, specialist engineering partners, and delivery across the seven AI7 disciplines. Engagements define customer control boundaries and operational ownership.
-- Active products: taed.dev, vendoreye, and rolefield.ai
+- Company type: Agentic AI product and enterprise solutions company
+- Operating model: AI7Lab builds focused products, works with organisations from problem framing through operated outcomes, and explores emerging problems through its lab.
+- Principal products: Vendoreye and RoleField
+- Supporting technology: Taed
 - Primary industries: Banking, insurance, government, healthcare, real estate, and logistics
 
 ## Core technology
 
-- Sovereign AI delivery: Strategy, architecture, compute, intelligence, engineering, control, and operations.
-- Deployment choices: On-premise, dedicated private environments, and controlled hybrid designs, scoped to workload and customer requirements.
+- Agentic AI delivery: Context, orchestration, action, learning, integration, controls, and production operations.
+- Architecture principles: Replaceable, observable, controlled, and versioned components, scoped to workload and customer requirements.
 
 - Visual intelligence: Multimodal understanding across documents, images, audio, and video, exposed through schema-controlled workflows and APIs.
 - Speech-to-speech intelligence: Natural multilingual voice interactions designed for Arabic, English, and the GCC's diverse language environment.
@@ -131,9 +133,10 @@ ${researchSections}
 ${careerSections}
 ## Canonical navigation
 
-${line('Vision and team', '/vision', 'Mission, operating model, research process, and team profiles.')}
+${line('Company and team', '/vision', 'Mission, operating model, exploration process, and team profiles.')}
 ${line('Product portfolio', '/products', 'Product descriptions and official external product links.')}
-${line('Technology', '/technology', 'Research systems and how they become production products.')}
+${line('Enterprise AI', '/enterprise-ai', 'Problem framing, proof, integration, and operated improvement.')}
+${line('Technology', '/technology', 'Architecture principles and how context becomes controlled action.')}
 ${line('Platform', '/platform', 'Shared architecture and enterprise capabilities.')}
 ${line('Announcements', '/announcements', 'Dated company, leadership, research, and product updates.')}
 ${line('Contact', '/contact', 'Official route for business enquiries.')}

@@ -3,10 +3,11 @@
 import { useState } from "react"
 import { ArrowRight } from "lucide-react"
 
-const interests = ["Sovereign AI strategy", "Private AI architecture", "Compute & infrastructure", "Models & intelligence", "Applications & engineering", "Governance & control", "Production operations", "Enterprise solutions", "Builder or startup partnership", "Enterprise AI pipeline", "Technology provider partnership", "Partnership", "Investment", "Product access", "Careers", "Other"]
+const interests = ["Enterprise AI", "Vendoreye", "RoleField", "Taed", "Product partnership", "Technology partnership", "Investment", "Careers", "Other"]
 
 export function ContactForm({ initialInterest }: { initialInterest?: string }) {
   const [submitted, setSubmitted] = useState(false)
+  const selectedInterest = interests.find((interest) => interest.toLowerCase() === initialInterest?.toLowerCase()) ?? 'Enterprise AI'
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -30,7 +31,7 @@ export function ContactForm({ initialInterest }: { initialInterest?: string }) {
           <select
             id="interest"
             name="interest"
-            defaultValue={interests.includes(initialInterest ?? '') ? initialInterest : 'Sovereign AI strategy'}
+            defaultValue={selectedInterest}
             className="min-h-[44px] sm:h-11 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
           >
             {interests.map((i) => (
@@ -48,7 +49,7 @@ export function ContactForm({ initialInterest }: { initialInterest?: string }) {
           id="message"
           name="message"
           rows={5}
-          placeholder="Describe the use case, existing systems, deployment preference, control requirements, and timeline."
+          placeholder="Describe the workflow, current systems, scale, constraints, desired outcome, and timeline."
           className="rounded-lg border border-border bg-background p-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
         />
       </div>

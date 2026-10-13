@@ -1,4 +1,4 @@
-import { formatBrand } from '@/lib/brand-text'
+import { canonicalBrandText, formatBrand } from '@/lib/brand-text'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, ExternalLink, ShieldCheck } from 'lucide-react'
 import { articleDescription, articleImageAlt, editorialArticles, focusAnalysis, focusPoints, getEditorialArticle, getPillar, getPillarImage, getRelatedEditorial, primaryKeyword, shareTakeaway, sourcesForArticle, topicKeywords } from '@/lib/editorial'
 import { siteUrl } from '@/lib/site'
-import { getVendorEyeGuideForTopic, taedUrl, vendorEyeUrl } from '@/lib/external-resources'
+import { getVendoreyeGuideForTopic, taedUrl, vendorEyeUrl } from '@/lib/external-resources'
 
 type Props = { params: Promise<{ slug: string }> }
 export function generateStaticParams() { return editorialArticles.map(({ slug }) => ({ slug })) }
@@ -14,15 +14,16 @@ export function generateStaticParams() { return editorialArticles.map(({ slug })
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getEditorialArticle((await params).slug)
   if (!article) return {}
-  const description = articleDescription(article)
+  const title = canonicalBrandText(article.title)
+  const description = canonicalBrandText(articleDescription(article))
   const path = `/insights/research/${article.slug}`
   const image = `${path}/opengraph-image`
   return {
-    title: article.title, description,
+    title, description,
     keywords: topicKeywords(article),
     alternates: { canonical: path }, authors: [{ name: 'AI7Lab Research & Product Team' }],
-    openGraph: { type: 'article', locale: 'en_AE', siteName: 'AI7Lab', url: path, title: article.title, description, publishedTime: '2026-08-26', modifiedTime: '2026-08-26', section: getPillar(article).title, tags: topicKeywords(article), images: [{ url: image, width: 1200, height: 630, alt: article.title }] },
-    twitter: { card: 'summary_large_image', title: article.title, description, images: [image] },
+    openGraph: { type: 'article', locale: 'en_AE', siteName: 'AI7Lab', url: path, title, description, publishedTime: '2026-08-26', modifiedTime: '2026-08-26', section: getPillar(article).title, tags: topicKeywords(article), images: [{ url: image, width: 1200, height: 630, alt: title }] },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   }
 }
 
@@ -38,16 +39,16 @@ export default async function ResearchArticlePage({ params }: Props) {
   const taedArticle = article.pillar === 13 || (article.pillar === 12 && article.number <= 117)
   const vendorEyeArticle = article.pillar === 14 || (article.pillar === 12 && (article.number === 118 || article.number === 119))
   const productArticle = article.pillar >= 12 && article.pillar <= 14
-  const productName = taedArticle ? 'taed.dev' : vendorEyeArticle ? 'vendoreye' : 'taed.dev and vendoreye'
-  const vendorEyeGuide = vendorEyeArticle ? getVendorEyeGuideForTopic(article.title) : null
+  const productName = taedArticle ? 'taed.dev' : vendorEyeArticle ? 'Vendoreye' : 'taed.dev and Vendoreye'
+  const vendorEyeGuide = vendorEyeArticle ? getVendoreyeGuideForTopic(article.title) : null
   const productHref = taedArticle ? taedUrl : vendorEyeGuide?.href ?? (vendorEyeArticle ? vendorEyeUrl : '/products')
-  const productAction = taedArticle ? 'Test one representative document with taed.dev' : vendorEyeArticle ? `Read the vendoreye guide: ${vendorEyeGuide?.title ?? 'Vendor compliance in the UAE'}` : 'Explore AI7Lab’s product and IP approach'
+  const productAction = taedArticle ? 'Test one representative document with taed.dev' : vendorEyeArticle ? `Read the Vendoreye guide: ${vendorEyeGuide?.title ?? 'Vendor compliance in the UAE'}` : 'Explore AI7Lab’s product and IP approach'
   const url = `${siteUrl}/insights/research/${article.slug}`
   const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title, description, image: [`${siteUrl}${getPillarImage(article.pillar)}`], datePublished: '2026-08-26', dateModified: '2026-08-26', author: { '@type': 'Organization', name: 'AI7Lab' }, publisher: { '@type': 'Organization', name: 'AI7Lab', logo: { '@type': 'ImageObject', url: `${siteUrl}/ai7lab-logo.png` } }, mainEntityOfPage: url, about: [primaryKeyword(article), 'Enterprise AI in the UAE', pillar.title], inLanguage: 'en-AE' }
   const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Insights', item: `${siteUrl}/insights` }, { '@type': 'ListItem', position: 3, name: pillar.title, item: `${siteUrl}/insights#pillar-${article.pillar}` }, { '@type': 'ListItem', position: 4, name: article.title, item: url }] }
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: canonicalBrandText(JSON.stringify(schema)).replace(/</g, '\\u003c') }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: canonicalBrandText(JSON.stringify(breadcrumbSchema)).replace(/</g, '\\u003c') }} />
     <header className="border-b border-border bg-grid pt-32 sm:pt-36 md:pt-44"><div className="mx-auto max-w-5xl px-5 pb-14 sm:px-6 md:pb-20">
       <Link href="/insights" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"><ArrowLeft className="h-4 w-4" />AI7Lab Research</Link>
       <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-muted-foreground"><span className="rounded-full bg-blue-50 px-3 py-1 font-medium text-primary">Pillar {formatBrand(article.pillar)} · {formatBrand(pillar.title)}</span><time dateTime="2026-08-26">26 August 2026</time><span>·</span><span className="flex items-center gap-1.5"><Clock3 className="h-4 w-4" />10 min read</span></div>

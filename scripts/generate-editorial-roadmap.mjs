@@ -6,7 +6,7 @@ if (!inputs.length || !output) throw new Error('Usage: node script source... out
 
 const pillarAliases = new Map([
   ['TAED content cluster', { number: 13, title: 'TAED document intelligence and extraction infrastructure' }],
-  ['VendorEye content cluster', { number: 14, title: 'VendorEye procurement, supplier evidence, and governance' }],
+  ['Vendoreye content cluster', { number: 14, title: 'Vendoreye procurement, supplier evidence, and governance' }],
 ])
 
 const parsed = inputs.map((source) => {

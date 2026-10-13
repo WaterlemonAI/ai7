@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import { canonicalBrandText } from './brand-text'
 
 export const brandName = 'AI7Lab'
 export const defaultDescription =
-  'AI7Lab helps enterprises and governments design, build, and operate sovereign AI environments—from strategy and private compute to models, applications, governance, and operations.'
+  'AI7Lab creates agentic AI products and works with leading organisations to solve business problems, reduce cost, improve efficiency, and build new operational capability.'
 
 export function pageMetadata({
   title,
@@ -15,8 +16,11 @@ export function pageMetadata({
   path: `/${string}` | '/'
   keywords?: string[]
 }): Metadata {
+  title = canonicalBrandText(title)
+  description = canonicalBrandText(description)
+  keywords = keywords.map(canonicalBrandText)
   const socialTitle = title.startsWith(brandName) ? title : `${title} | ${brandName}`
-  const socialImage = { url: '/opengraph-image', width: 1200, height: 630, alt: 'AI7Lab — Sovereign AI, from strategy to production' }
+  const socialImage = { url: '/opengraph-image', width: 1200, height: 630, alt: 'AI7Lab — agentic AI products built for real work' }
   return {
     title,
     description,

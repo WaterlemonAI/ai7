@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: "Plan your sovereign AI environment with AI7Lab in Dubai: strategy, private compute, models, engineering, governance, and production operations.",
+  description: "Talk to AI7Lab in Dubai about Vendoreye, RoleField, Taed, or an enterprise problem that agentic AI could solve.",
   path: "/contact",
   keywords: ['AI company Dubai contact', 'enterprise AI UAE'],
 })
@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 const details = [
   { icon: MapPin, label: "Headquarters", value: "Dubai, United Arab Emirates" },
   { icon: Mail, label: "Email", value: "contact@ai7lab.net", href: "mailto:contact@ai7lab.net" },
-  { icon: Building2, label: "For", value: "Enterprises, governments & delivery partners" },
+  { icon: Building2, label: "For", value: "Product teams, enterprises & delivery partners" },
 ]
 
 export default async function ContactPage({ searchParams }: { searchParams: Promise<{ interest?: string }> }) {
@@ -24,8 +24,8 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Design an AI environment you control."
-        description="Tell us what you want AI to do, where it needs to run, and what must remain under your control. We’ll help define the use case, architecture, delivery scope, and operating model."
+        title="Bring us the problem worth solving."
+        description="Tell us where work is slow, expensive, fragmented or constrained. We’ll help determine whether an AI7Lab product fits—or frame a focused path from problem to operated outcome."
       />
 
       <section>
@@ -51,7 +51,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mb-3 text-2xl font-semibold tracking-tight">Start with your requirements.</h2><p className="mb-7 leading-relaxed text-muted-foreground">Share your current systems, data residency needs, and priorities. The first conversation will help identify the right starting point across the AI7 delivery loop.</p><ContactForm initialInterest={interest} />
+            <h2 className="mb-3 text-2xl font-semibold tracking-tight">Start with the operating reality.</h2><p className="mb-7 leading-relaxed text-muted-foreground">Share the workflow, current systems, scale, constraints and outcome that matters. The first conversation will help identify the right product or a focused enterprise AI starting point.</p><ContactForm initialInterest={interest} />
           </Reveal>
         </div>
       </section>
