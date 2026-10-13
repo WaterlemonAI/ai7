@@ -171,8 +171,8 @@ export type TeamMember = {
   role: string
   focus: string
   bio: string
-  linkedin?: string
   photo?: string
+  photoPosition?: string
 }
 
 export const team: TeamMember[] = [
@@ -182,7 +182,6 @@ export const team: TeamMember[] = [
     role: 'Product & Go-to-Market',
     focus: 'Product · GTM · Enterprise',
     bio: 'Leads enterprise product strategy, sales, partnerships, and GCC market execution.',
-    linkedin: 'https://www.linkedin.com/in/arbazdxb',
   },
   {
     name: 'Dr. Riya Rawal',
@@ -190,20 +189,35 @@ export const team: TeamMember[] = [
     role: 'AI Research',
     focus: 'Research · Models · Intelligence',
     bio: 'Advances AI7Lab’s model research and turns new intelligence capabilities into product foundations.',
-    linkedin: 'https://www.linkedin.com/in/riya-rawal-93838044',
   },
   {
-    name: 'Sazid',
-    role: 'Technology Lead',
-    focus: 'Architecture · Engineering · Scale',
-    bio: 'Leads platform architecture and the engineering systems that move research into reliable production software.',
+    name: 'Taha Siddiqui',
+    photo: '/team/taha-siddiqui.jpeg',
+    photoPosition: 'center 18%',
+    role: 'Product & Technology Lead',
+    focus: 'Product · Technology · Delivery',
+    bio: 'Leads product and technology across AI7Lab, turning operational problems into clear product direction and production-ready systems.',
   },
   {
     name: 'Zainab Khan',
+    photo: '/team/zainab-khan.jpg',
     role: 'Product & Operations',
     focus: 'Product · Customer · Operations',
     bio: 'Works across product delivery, customer operations, and the feedback loops that shape AI7Lab products.',
-    linkedin: 'https://www.linkedin.com/in/zainabk01',
+  },
+  {
+    name: 'Vikram Kapoor',
+    photo: '/team/vikram-kapoor.jpeg',
+    role: 'Sales & Partnership Lead',
+    focus: 'Sales · Partnerships · Growth',
+    bio: 'Leads sales and partnerships, connecting organisations and ecosystem partners with the right AI7Lab products and delivery path.',
+  },
+  {
+    name: 'Saddam Rajput',
+    photo: '/team/saddam-rajput.jpeg',
+    role: 'CTO — RoleField',
+    focus: 'Architecture · Engineering · Scale',
+    bio: 'Leads RoleField’s technology direction across support, calling, call-centre operations, and Seer kiosk AI.',
   },
 ]
 

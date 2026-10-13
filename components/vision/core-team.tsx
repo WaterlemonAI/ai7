@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowUpRight, Share2 } from 'lucide-react'
+import { Share2 } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { linkedInUrl, team } from '@/lib/site'
 import { formatBrand } from '@/lib/brand-text'
@@ -44,15 +44,6 @@ export function CoreTeam() {
                   </div>
                   <p className="mt-6 flex-1 text-sm leading-relaxed text-muted-foreground">{formatBrand(member.bio)}</p>
                   <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">{formatBrand(member.focus)}</p>
-                  {member.linkedin ? (
-                    <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} on LinkedIn`} className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-primary">
-                      LinkedIn profile <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  ) : (
-                    <a href={`${linkedInUrl}people/`} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-primary">
-                      AI7Lab team <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  )}
                 </article>
               </Reveal>
             ))}
